@@ -1,23 +1,29 @@
-//
-//  AppDelegate.m
-//  HI Capacity
-//
-//  Created by Jian Shi Wang on 5/12/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
-
 #import "AppDelegate.h"
+#import "HTTPEngine.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // Override point for customization after application launch.
-    return YES;
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  NSLog(@"did finish launching");
+  NSMutableDictionary *headerFields = [NSMutableDictionary dictionary];
+  [headerFields setValue:@"iOS" forKey:@"x-client-identifier"];
+  [headerFields setValue:@"application/json" forKey:@"Accept"];
+  HTTPEngine *httpEngine = [[HTTPEngine alloc] initWithHostName:@"hicapacity.org" customHeaderFields:headerFields];
+  [httpEngine posts:nil :^(NSMutableArray *posts) {
+    for (NSDictionary *post in posts) {
+      NSLog(@"%@", [post objectForKey:@"title"]);
+    }
+  }
+            onError:^(NSError *error) {
+              // please handle the error
+            }];
+  
+  // Override point for customization after application launch.
+  return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
   // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

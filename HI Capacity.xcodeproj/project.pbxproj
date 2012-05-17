@@ -21,6 +21,18 @@
 		A39E3410155FA29F0076ED6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E33EE155FA29F0076ED6D /* Foundation.framework */; };
 		A39E3418155FA29F0076ED6D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A39E3416155FA29F0076ED6D /* InfoPlist.strings */; };
 		A39E341B155FA29F0076ED6D /* HI_CapacityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A39E341A155FA29F0076ED6D /* HI_CapacityTests.m */; };
+		A39E343F1564E0D40076ED6D /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A39E342D1564E0D40076ED6D /* NSData+Base64.m */; };
+		A39E34401564E0D40076ED6D /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = A39E342F1564E0D40076ED6D /* NSDate+RFC1123.m */; };
+		A39E34411564E0D40076ED6D /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = A39E34311564E0D40076ED6D /* NSDictionary+RequestEncoding.m */; };
+		A39E34421564E0D40076ED6D /* NSString+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A39E34331564E0D40076ED6D /* NSString+MKNetworkKitAdditions.m */; };
+		A39E34431564E0D40076ED6D /* UIAlertView+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A39E34351564E0D40076ED6D /* UIAlertView+MKNetworkKitAdditions.m */; };
+		A39E34441564E0D40076ED6D /* MKNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = A39E34371564E0D40076ED6D /* MKNetworkEngine.m */; };
+		A39E34451564E0D40076ED6D /* MKNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A39E343A1564E0D40076ED6D /* MKNetworkOperation.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		A39E34461564E0D40076ED6D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A39E343D1564E0D40076ED6D /* Reachability.m */; };
+		A39E34491564E17A0076ED6D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E34481564E17A0076ED6D /* CFNetwork.framework */; };
+		A39E344B1564E2610076ED6D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E344A1564E2610076ED6D /* SystemConfiguration.framework */; };
+		A39E344D1564E2660076ED6D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E344C1564E2660076ED6D /* Security.framework */; };
+		A39E34501564E4830076ED6D /* HTTPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = A39E344F1564E4830076ED6D /* HTTPEngine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +66,28 @@
 		A39E3417155FA29F0076ED6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A39E3419155FA29F0076ED6D /* HI_CapacityTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HI_CapacityTests.h; sourceTree = "<group>"; };
 		A39E341A155FA29F0076ED6D /* HI_CapacityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HI_CapacityTests.m; sourceTree = "<group>"; };
+		A39E342C1564E0D40076ED6D /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		A39E342D1564E0D40076ED6D /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		A39E342E1564E0D40076ED6D /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
+		A39E342F1564E0D40076ED6D /* NSDate+RFC1123.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RFC1123.m"; sourceTree = "<group>"; };
+		A39E34301564E0D40076ED6D /* NSDictionary+RequestEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RequestEncoding.h"; sourceTree = "<group>"; };
+		A39E34311564E0D40076ED6D /* NSDictionary+RequestEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+RequestEncoding.m"; sourceTree = "<group>"; };
+		A39E34321564E0D40076ED6D /* NSString+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		A39E34331564E0D40076ED6D /* NSString+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		A39E34341564E0D40076ED6D /* UIAlertView+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		A39E34351564E0D40076ED6D /* UIAlertView+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		A39E34361564E0D40076ED6D /* MKNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngine.h; sourceTree = "<group>"; };
+		A39E34371564E0D40076ED6D /* MKNetworkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkEngine.m; sourceTree = "<group>"; };
+		A39E34381564E0D40076ED6D /* MKNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkKit.h; sourceTree = "<group>"; };
+		A39E34391564E0D40076ED6D /* MKNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkOperation.h; sourceTree = "<group>"; };
+		A39E343A1564E0D40076ED6D /* MKNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkOperation.m; sourceTree = "<group>"; };
+		A39E343C1564E0D40076ED6D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		A39E343D1564E0D40076ED6D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		A39E34481564E17A0076ED6D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		A39E344A1564E2610076ED6D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A39E344C1564E2660076ED6D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A39E344E1564E4830076ED6D /* HTTPEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPEngine.h; sourceTree = "<group>"; };
+		A39E344F1564E4830076ED6D /* HTTPEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPEngine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +95,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A39E344D1564E2660076ED6D /* Security.framework in Frameworks */,
+				A39E344B1564E2610076ED6D /* SystemConfiguration.framework in Frameworks */,
+				A39E34491564E17A0076ED6D /* CFNetwork.framework in Frameworks */,
 				A39E33ED155FA29F0076ED6D /* UIKit.framework in Frameworks */,
 				A39E33EF155FA29F0076ED6D /* Foundation.framework in Frameworks */,
 				A39E33F1155FA29F0076ED6D /* CoreGraphics.framework in Frameworks */,
@@ -83,6 +120,7 @@
 		A39E33DD155FA29E0076ED6D = {
 			isa = PBXGroup;
 			children = (
+				A39E34281564E0D40076ED6D /* MKNetworkKit */,
 				A39E33F2155FA29F0076ED6D /* HI Capacity */,
 				A39E3413155FA29F0076ED6D /* HI CapacityTests */,
 				A39E33EB155FA29F0076ED6D /* Frameworks */,
@@ -102,6 +140,9 @@
 		A39E33EB155FA29F0076ED6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A39E344C1564E2660076ED6D /* Security.framework */,
+				A39E344A1564E2610076ED6D /* SystemConfiguration.framework */,
+				A39E34481564E17A0076ED6D /* CFNetwork.framework */,
 				A39E33EC155FA29F0076ED6D /* UIKit.framework */,
 				A39E33EE155FA29F0076ED6D /* Foundation.framework */,
 				A39E33F0155FA29F0076ED6D /* CoreGraphics.framework */,
@@ -120,6 +161,8 @@
 				A39E3404155FA29F0076ED6D /* ViewController.h */,
 				A39E3405155FA29F0076ED6D /* ViewController.m */,
 				A39E33F3155FA29F0076ED6D /* Supporting Files */,
+				A39E344E1564E4830076ED6D /* HTTPEngine.h */,
+				A39E344F1564E4830076ED6D /* HTTPEngine.m */,
 			);
 			path = "HI Capacity";
 			sourceTree = "<group>";
@@ -152,6 +195,47 @@
 				A39E3416155FA29F0076ED6D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A39E34281564E0D40076ED6D /* MKNetworkKit */ = {
+			isa = PBXGroup;
+			children = (
+				A39E34291564E0D40076ED6D /* Categories */,
+				A39E34361564E0D40076ED6D /* MKNetworkEngine.h */,
+				A39E34371564E0D40076ED6D /* MKNetworkEngine.m */,
+				A39E34381564E0D40076ED6D /* MKNetworkKit.h */,
+				A39E34391564E0D40076ED6D /* MKNetworkOperation.h */,
+				A39E343A1564E0D40076ED6D /* MKNetworkOperation.m */,
+				A39E343B1564E0D40076ED6D /* Reachability */,
+			);
+			name = MKNetworkKit;
+			path = vendor/MKNetworkKit/MKNetworkKit;
+			sourceTree = "<group>";
+		};
+		A39E34291564E0D40076ED6D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A39E342C1564E0D40076ED6D /* NSData+Base64.h */,
+				A39E342D1564E0D40076ED6D /* NSData+Base64.m */,
+				A39E342E1564E0D40076ED6D /* NSDate+RFC1123.h */,
+				A39E342F1564E0D40076ED6D /* NSDate+RFC1123.m */,
+				A39E34301564E0D40076ED6D /* NSDictionary+RequestEncoding.h */,
+				A39E34311564E0D40076ED6D /* NSDictionary+RequestEncoding.m */,
+				A39E34321564E0D40076ED6D /* NSString+MKNetworkKitAdditions.h */,
+				A39E34331564E0D40076ED6D /* NSString+MKNetworkKitAdditions.m */,
+				A39E34341564E0D40076ED6D /* UIAlertView+MKNetworkKitAdditions.h */,
+				A39E34351564E0D40076ED6D /* UIAlertView+MKNetworkKitAdditions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		A39E343B1564E0D40076ED6D /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				A39E343C1564E0D40076ED6D /* Reachability.h */,
+				A39E343D1564E0D40076ED6D /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +348,15 @@
 				A39E33F9155FA29F0076ED6D /* main.m in Sources */,
 				A39E33FD155FA29F0076ED6D /* AppDelegate.m in Sources */,
 				A39E3406155FA29F0076ED6D /* ViewController.m in Sources */,
+				A39E343F1564E0D40076ED6D /* NSData+Base64.m in Sources */,
+				A39E34401564E0D40076ED6D /* NSDate+RFC1123.m in Sources */,
+				A39E34411564E0D40076ED6D /* NSDictionary+RequestEncoding.m in Sources */,
+				A39E34421564E0D40076ED6D /* NSString+MKNetworkKitAdditions.m in Sources */,
+				A39E34431564E0D40076ED6D /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
+				A39E34441564E0D40076ED6D /* MKNetworkEngine.m in Sources */,
+				A39E34451564E0D40076ED6D /* MKNetworkOperation.m in Sources */,
+				A39E34461564E0D40076ED6D /* Reachability.m in Sources */,
+				A39E34501564E4830076ED6D /* HTTPEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +536,7 @@
 				A39E3420155FA29F0076ED6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A39E3421155FA29F0076ED6D /* Build configuration list for PBXNativeTarget "HI CapacityTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +545,7 @@
 				A39E3423155FA29F0076ED6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
