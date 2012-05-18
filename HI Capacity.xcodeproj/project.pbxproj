@@ -15,7 +15,6 @@
 		A39E33FD155FA29F0076ED6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A39E33FC155FA29F0076ED6D /* AppDelegate.m */; };
 		A39E3400155FA29F0076ED6D /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39E33FE155FA29F0076ED6D /* MainStoryboard_iPhone.storyboard */; };
 		A39E3403155FA29F0076ED6D /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39E3401155FA29F0076ED6D /* MainStoryboard_iPad.storyboard */; };
-		A39E3406155FA29F0076ED6D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39E3405155FA29F0076ED6D /* ViewController.m */; };
 		A39E340E155FA29F0076ED6D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E340D155FA29F0076ED6D /* SenTestingKit.framework */; };
 		A39E340F155FA29F0076ED6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E33EC155FA29F0076ED6D /* UIKit.framework */; };
 		A39E3410155FA29F0076ED6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E33EE155FA29F0076ED6D /* Foundation.framework */; };
@@ -60,8 +59,6 @@
 		A39E33FC155FA29F0076ED6D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A39E33FF155FA29F0076ED6D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		A39E3402155FA29F0076ED6D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		A39E3404155FA29F0076ED6D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A39E3405155FA29F0076ED6D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A39E340C155FA29F0076ED6D /* HI CapacityTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HI CapacityTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39E340D155FA29F0076ED6D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		A39E3415155FA29F0076ED6D /* HI CapacityTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HI CapacityTests-Info.plist"; sourceTree = "<group>"; };
@@ -164,8 +161,6 @@
 				A39E33FC155FA29F0076ED6D /* AppDelegate.m */,
 				A39E33FE155FA29F0076ED6D /* MainStoryboard_iPhone.storyboard */,
 				A39E3401155FA29F0076ED6D /* MainStoryboard_iPad.storyboard */,
-				A39E3404155FA29F0076ED6D /* ViewController.h */,
-				A39E3405155FA29F0076ED6D /* ViewController.m */,
 				A39E33F3155FA29F0076ED6D /* Supporting Files */,
 				A39E344E1564E4830076ED6D /* HTTPEngine.h */,
 				A39E344F1564E4830076ED6D /* HTTPEngine.m */,
@@ -357,7 +352,6 @@
 			files = (
 				A39E33F9155FA29F0076ED6D /* main.m in Sources */,
 				A39E33FD155FA29F0076ED6D /* AppDelegate.m in Sources */,
-				A39E3406155FA29F0076ED6D /* ViewController.m in Sources */,
 				A39E343F1564E0D40076ED6D /* NSData+Base64.m in Sources */,
 				A39E34401564E0D40076ED6D /* NSDate+RFC1123.m in Sources */,
 				A39E34411564E0D40076ED6D /* NSDictionary+RequestEncoding.m in Sources */,

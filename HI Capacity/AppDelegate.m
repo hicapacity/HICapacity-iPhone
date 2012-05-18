@@ -7,6 +7,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   NSLog(@"did finish launching");
+  /*
   NSMutableDictionary *headerFields = [NSMutableDictionary dictionary];
   [headerFields setValue:@"iOS" forKey:@"x-client-identifier"];
   [headerFields setValue:@"application/json" forKey:@"Accept"];
@@ -19,7 +20,7 @@
             onError:^(NSError *error) {
               // please handle the error
             }];
-  
+  */
   // Override point for customization after application launch.
   return YES;
 }
