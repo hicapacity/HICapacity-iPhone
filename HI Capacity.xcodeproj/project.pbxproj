@@ -33,6 +33,8 @@
 		A39E344B1564E2610076ED6D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E344A1564E2610076ED6D /* SystemConfiguration.framework */; };
 		A39E344D1564E2660076ED6D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E344C1564E2660076ED6D /* Security.framework */; };
 		A39E34501564E4830076ED6D /* HTTPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = A39E344F1564E4830076ED6D /* HTTPEngine.m */; };
+		C8407A6D15662EFA001CAB68 /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8407A6C15662EFA001CAB68 /* PostsViewController.m */; };
+		C8407A7015663806001CAB68 /* PostContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8407A6F15663806001CAB68 /* PostContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,10 @@
 		A39E344C1564E2660076ED6D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A39E344E1564E4830076ED6D /* HTTPEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPEngine.h; sourceTree = "<group>"; };
 		A39E344F1564E4830076ED6D /* HTTPEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPEngine.m; sourceTree = "<group>"; };
+		C8407A6B15662EF9001CAB68 /* PostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsViewController.h; sourceTree = "<group>"; };
+		C8407A6C15662EFA001CAB68 /* PostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsViewController.m; sourceTree = "<group>"; };
+		C8407A6E15663806001CAB68 /* PostContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostContentViewController.h; sourceTree = "<group>"; };
+		C8407A6F15663806001CAB68 /* PostContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostContentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,10 @@
 				A39E33F3155FA29F0076ED6D /* Supporting Files */,
 				A39E344E1564E4830076ED6D /* HTTPEngine.h */,
 				A39E344F1564E4830076ED6D /* HTTPEngine.m */,
+				C8407A6B15662EF9001CAB68 /* PostsViewController.h */,
+				C8407A6C15662EFA001CAB68 /* PostsViewController.m */,
+				C8407A6E15663806001CAB68 /* PostContentViewController.h */,
+				C8407A6F15663806001CAB68 /* PostContentViewController.m */,
 			);
 			path = "HI Capacity";
 			sourceTree = "<group>";
@@ -357,6 +367,8 @@
 				A39E34451564E0D40076ED6D /* MKNetworkOperation.m in Sources */,
 				A39E34461564E0D40076ED6D /* Reachability.m in Sources */,
 				A39E34501564E4830076ED6D /* HTTPEngine.m in Sources */,
+				C8407A6D15662EFA001CAB68 /* PostsViewController.m in Sources */,
+				C8407A7015663806001CAB68 /* PostContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
