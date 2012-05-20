@@ -6,7 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Item 2-->
+        <!--View Controller - Photos-->
         <scene sceneID="YfF-GG-KNf">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8V-fL-7KU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -16,17 +16,17 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="yat-oq-zuT"/>
+                    <tabBarItem key="tabBarItem" title="Photos" id="yat-oq-zuT"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="578" y="502"/>
+            <point key="canvasLocation" x="293" y="523"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Posts-->
         <scene sceneID="LLv-Vl-PKR">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41i-xb-RFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="2PG-ux-Xm6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9wo-1B-dLL"/>
+                    <tabBarItem key="tabBarItem" title="Posts" id="9wo-1B-dLL"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="7xm-M9-KHg">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -35,7 +35,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="44" y="-340"/>
+            <point key="canvasLocation" x="152" y="-674"/>
         </scene>
         <!--Posts View Controller - Posts-->
         <scene sceneID="Qoe-61-JaK">
@@ -71,7 +71,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="577" y="-624"/>
+            <point key="canvasLocation" x="584" y="-674"/>
         </scene>
         <!--Post Content View Controller-->
         <scene sceneID="n90-uB-W7B">
@@ -106,22 +106,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="954" y="-624"/>
-        </scene>
-        <!--View Controller - Item 1-->
-        <scene sceneID="csx-zH-cae">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hkm-5f-uhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="gex-pF-801" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pXo-8W-TYZ">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="P1T-nI-O5e"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="578" y="-63"/>
+            <point key="canvasLocation" x="995" y="-674"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="F48-Z2-EBp">
@@ -136,15 +121,49 @@
                     </tabBar>
                     <connections>
                         <segue destination="2PG-ux-Xm6" kind="relationship" relationship="viewControllers" id="Ddd-8C-zKX"/>
-                        <segue destination="gex-pF-801" kind="relationship" relationship="viewControllers" id="fGr-Yu-Dxl"/>
+                        <segue destination="j4b-DO-kFC" kind="relationship" relationship="viewControllers" id="4y6-vY-NPg"/>
                         <segue destination="cgN-mC-IbB" kind="relationship" relationship="viewControllers" id="euB-Wx-Uaw"/>
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="44" y="220"/>
+            <point key="canvasLocation" x="-150" y="-70"/>
+        </scene>
+        <!--Navigation Controller - Calendar-->
+        <scene sceneID="GCJ-Iz-yen">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gs4-ee-V3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" hidesBottomBarWhenPushed="YES" id="j4b-DO-kFC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calendar" id="OQ9-gF-vQQ"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yFg-5Z-pdc">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lgc-69-1Cm" kind="relationship" relationship="rootViewController" id="6cS-vS-04S"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="293" y="-70"/>
+        </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="aoh-cy-aBN">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rq9-ge-y8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="lgc-69-1Cm" customClass="CalendarViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aVW-1W-iJU">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="egt-Kq-fup"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="701" y="-70"/>
         </scene>
     </scenes>
     <classes>
+        <class className="CalendarViewController" superclassName="TKCalendarMonthTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarViewController.h"/>
+        </class>
         <class className="PostContentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PostContentViewController.h"/>
             <relationships>
@@ -157,6 +176,12 @@
             <relationships>
                 <relationship kind="outlet" name="postTableView" candidateClass="UITableView"/>
             </relationships>
+        </class>
+        <class className="TKCalendarMonthTableViewController" superclassName="TKCalendarMonthViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TKCalendarMonthTableViewController.h"/>
+        </class>
+        <class className="TKCalendarMonthViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TKCalendarMonthViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
