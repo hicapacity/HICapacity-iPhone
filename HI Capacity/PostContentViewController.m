@@ -47,7 +47,11 @@
     int newY = titleLabel.frame.size.height + titleLabel.frame.origin.y + labelSpacing;
     
     // Set the date label
-    [dateLabel setText:[NSString stringWithFormat:@"(%@)", [post objectForKey:@"date"]]];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init]; 
+    [dateFormat setDateFormat:@"EEE, d MMM yyyy HH:mm:ss ZZZ"]; 
+    NSDate *newDate = [dateFormat dateFromString:[post objectForKey:@"date"]];  
+    [dateFormat setDateFormat:@"EEEE, d MMM yyyy h:mm"];
+    [dateLabel setText:[NSString stringWithFormat:@"(%@)", [dateFormat stringFromDate:newDate]]];
     
     // Adjust position of the date label
     CGRect frame = dateLabel.frame;
@@ -56,14 +60,25 @@
     [dateLabel setNumberOfLines:0];
     [dateLabel sizeToFit];
     
-    // Keep track of where to put the post content
-    [contentLabel setText:[post objectForKey:@"content"]];
+    // Set settings on the UIWebView
+    [contentLabel setOpaque:FALSE];
+    [contentLabel setBackgroundColor:[UIColor clearColor]];
+    
+    // Set the content of the UIWebView and set it's y position
+    [contentLabel loadHTMLString:[post objectForKey:@"content"] baseURL:nil];
     newY = dateLabel.frame.size.height + dateLabel.frame.origin.y + labelSpacing;
     frame = contentLabel.frame;
-    frame.origin.y = newY;
+    frame.origin.y = newY; 
     contentLabel.frame = frame;
-    [contentLabel setNumberOfLines:0];
-    [contentLabel sizeToFit];
+    
+    //Disable bounce scroll on UIWebView
+    for(UIView *tmpView in ((UIWebView *)contentLabel).subviews){
+        if([tmpView isKindOfClass:[UIScrollView class] ]){
+            ((UIScrollView*)tmpView).scrollEnabled = NO;
+            ((UIScrollView*)tmpView).bounces = NO;
+            break;
+        }
+    }
     
     // Calculate size of content and set contentSize for scrollview
     float sizeOfContent = 0;
@@ -75,7 +90,16 @@
     
     // Set content size for scroll view
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, sizeOfContent);
-    
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    //This will resize the content of the webview
+    CGRect frame = webView.frame;
+    frame.size.height = 1;
+    webView.frame = frame;
+    CGSize fittingSize = [webView sizeThatFits:CGSizeZero];
+    frame.size = fittingSize;
+    webView.frame = frame;
 }
 
 - (void)viewDidUnload
@@ -84,6 +108,8 @@
     [self setDateLabel:nil];
     [self setContentLabel:nil];
     [self setScrollView:nil];
+    [self setContentLabel:nil];
+    [self setContentLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PostContentViewController : UIViewController
+@interface PostContentViewController : UIViewController <UIWebViewDelegate>
 
 @property (strong, nonatomic) NSDictionary *post;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (strong, nonatomic) IBOutlet UIWebView *contentLabel;
+
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
