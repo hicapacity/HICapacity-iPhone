@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PostContentViewController : UIViewController <UIWebViewDelegate>
+@interface PostContentViewController : UIViewController <UIWebViewDelegate, UIScrollViewDelegate>
 
 @property (strong, nonatomic) NSDictionary *post;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

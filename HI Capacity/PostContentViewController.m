@@ -63,9 +63,20 @@
     // Set settings on the UIWebView
     [contentLabel setOpaque:FALSE];
     [contentLabel setBackgroundColor:[UIColor clearColor]];
-    
+  
+  // Wrap the post content is html tags with CSS font information
+  NSString* postContent = [post objectForKey:@"content"];
+  NSString* htmlContentString = [NSString stringWithFormat:
+                                 @"<html>"
+                                 "<style type=\"text/css\">"
+                                 "body { font-family:Helvetica Neue; font-size:36;}"
+                                 "</style>"
+                                 "<body>"
+                                 "<p>%@</p>"
+                                 "</body></html>", postContent];
+  
     // Set the content of the UIWebView and set it's y position
-    [contentLabel loadHTMLString:[post objectForKey:@"content"] baseURL:nil];
+    [contentLabel loadHTMLString:htmlContentString baseURL:nil];
     newY = dateLabel.frame.size.height + dateLabel.frame.origin.y + labelSpacing;
     frame = contentLabel.frame;
     frame.origin.y = newY; 
@@ -79,17 +90,20 @@
             break;
         }
     }
-    
-    // Calculate size of content and set contentSize for scrollview
-    float sizeOfContent = 0;
-    int i;
-    for (i = 0; i < [scrollView.subviews count]; i++) {
-        UIView *view =[scrollView.subviews objectAtIndex:i];
-        sizeOfContent += view.frame.size.height;
-    }
-    
-    // Set content size for scroll view
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, sizeOfContent);
+  
+  // Hack to use scalePageToFit but also disable the pinch/zoom of the UIWebView
+  UIScrollView *webViewScrollView = [contentLabel.subviews objectAtIndex:0];
+  webViewScrollView.delegate = self;//self must be UIScrollViewDelegate
+}
+
+-(BOOL) webView:(UIWebView *)inWeb shouldStartLoadWithRequest:(NSURLRequest *)inRequest navigationType:(UIWebViewNavigationType)inType {
+  // Handle links in safari
+  if ( inType == UIWebViewNavigationTypeLinkClicked ) {
+    [[UIApplication sharedApplication] openURL:[inRequest URL]];
+    return NO;
+  }
+  
+  return YES;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -100,6 +114,19 @@
     CGSize fittingSize = [webView sizeThatFits:CGSizeZero];
     frame.size = fittingSize;
     webView.frame = frame;
+  
+  CGFloat scrollViewHeight = 0.0f;
+  for (UIView *view in scrollView.subviews){
+    if (scrollViewHeight < view.frame.origin.y + view.frame.size.height) {
+      scrollViewHeight = view.frame.origin.y + view.frame.size.height;
+    }
+  }
+  scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, scrollViewHeight);
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+  // return nil to prevent zooming in the web view
+  return nil;
 }
 
 - (void)viewDidUnload
