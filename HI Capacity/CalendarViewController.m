@@ -8,6 +8,8 @@
 
 #import "CalendarViewController.h"
 #import "NSDate+TKCategory.h"
+#import "HTTPEngine.h"
+#import "Event.h"
 
 @interface CalendarViewController ()
 
@@ -37,7 +39,24 @@
 }
 
 - (NSArray*) calendarMonthView:(TKCalendarMonthView*)monthView marksFromDate:(NSDate*)startDate toDate:(NSDate*)lastDate {
-	[self generateRandomDataForStartDate:startDate endDate:lastDate];
+  [dataArray removeAllObjects]; // clear the array, waiting for new data to return
+  
+  NSMutableDictionary *headerFields = [NSMutableDictionary dictionary];
+  [headerFields setValue:@"iOS" forKey:@"x-client-identifier"];
+  [headerFields setValue:@"application/json" forKey:@"Accept"];
+  HTTPEngine *httpEngine = [[HTTPEngine alloc] initWithHostName:@"www.googleapis.com" customHeaderFields:headerFields];
+  [httpEngine eventsFrom:startDate to:lastDate onCompletion:^(NSMutableArray *returnedEvents) {
+    // reload table data
+    [returnedEvents enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
+      Event *e = [[Event alloc] initWithDictionary:[returnedEvents objectAtIndex:index]];
+      [dataArray addObject:e];
+    }];
+    [[self tableView] reloadData]; // new events are in, reload table
+  }
+                 onError:^(NSError *error) {
+                   NSLog(@"%@", error);
+                 }];
+//	[self generateRandomDataForStartDate:startDate endDate:lastDate];
 	return dataArray;
 }
 - (void) calendarMonthView:(TKCalendarMonthView*)monthView didSelectDate:(NSDate*)date{

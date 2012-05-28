@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		091E407815731F8900EE1F9E /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 091E407715731F8900EE1F9E /* Event.m */; };
 		09A4459C1567A6CD00634C53 /* NSDate+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A4458E1567A6CD00634C53 /* NSDate+TKCategory.m */; };
 		09A4459D1567A6CD00634C53 /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 09A4458F1567A6CD00634C53 /* TapkuLibrary.bundle */; };
 		09A4459E1567A6CD00634C53 /* TKCalendarMonthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A445911567A6CD00634C53 /* TKCalendarMonthTableViewController.m */; };
@@ -56,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		091E407615731F8900EE1F9E /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		091E407715731F8900EE1F9E /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		09A4458D1567A6CD00634C53 /* NSDate+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TKCategory.h"; sourceTree = "<group>"; };
 		09A4458E1567A6CD00634C53 /* NSDate+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TKCategory.m"; sourceTree = "<group>"; };
 		09A4458F1567A6CD00634C53 /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapkuLibrary.bundle; sourceTree = "<group>"; };
@@ -146,6 +149,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		091E407515731F7A00EE1F9E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				091E407615731F8900EE1F9E /* Event.h */,
+				091E407715731F8900EE1F9E /* Event.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		09A4458C1567A6CD00634C53 /* TapkuLibrary */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +219,7 @@
 		A39E33F2155FA29F0076ED6D /* HI Capacity */ = {
 			isa = PBXGroup;
 			children = (
+				091E407515731F7A00EE1F9E /* Model */,
 				A39E33FB155FA29F0076ED6D /* AppDelegate.h */,
 				A39E33FC155FA29F0076ED6D /* AppDelegate.m */,
 				A39E33FE155FA29F0076ED6D /* MainStoryboard_iPhone.storyboard */,
@@ -424,6 +437,7 @@
 				09A445A21567A6CD00634C53 /* UIImage+TKCategory.m in Sources */,
 				09A445A31567A6CD00634C53 /* UIView+TKCategory.m in Sources */,
 				09A445B11568645D00634C53 /* CalendarViewController.m in Sources */,
+				091E407815731F8900EE1F9E /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
