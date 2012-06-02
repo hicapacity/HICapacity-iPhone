@@ -10,12 +10,11 @@
 #import "TKCalendarMonthTableViewController.h"
 
 @interface CalendarViewController : TKCalendarMonthTableViewController {
-
+  NSDate *lastStartDate;
+  NSDate *lastEndDate;
 }
 
 @property (retain,nonatomic) NSMutableArray *dataArray;
 @property (retain,nonatomic) NSMutableDictionary *dataDictionary;
-
-- (void) generateRandomDataForStartDate:(NSDate*)start endDate:(NSDate*)end;
 
 @end

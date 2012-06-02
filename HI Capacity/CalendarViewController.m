@@ -19,6 +19,9 @@
 
 @synthesize dataArray, dataDictionary;
 
+- (id) initWithCoder:(NSCoder *)aDecoder {
+  return [super initWithSunday:YES];
+}
 
 - (void)viewDidLoad{
 	[super viewDidLoad];
@@ -29,34 +32,76 @@
 //  [[[self navigationController] navigationBar] setHidden:YES];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-	[super viewDidAppear:animated];
-  //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init]; 
-  //[dateFormatter setDateFormat:@"dd.MM.yy"]; 
-  //NSDate *d = [dateFormatter dateFromString:@"02.05.11"]; 
-  //[dateFormatter release];
-  //[self.monthView selectDate:d];
-}
-
 - (NSArray*) calendarMonthView:(TKCalendarMonthView*)monthView marksFromDate:(NSDate*)startDate toDate:(NSDate*)lastDate {
+  if ([lastStartDate isSameDay:startDate] && [lastEndDate isSameDay:lastDate]) {
+    return dataArray;
+  }
+  
+  // Dates don't match, need to perform a new asynchronous query
+  
+  // keep track of the last start and end dates queried for
+  lastStartDate = startDate;
+  lastEndDate = lastDate;
+  
   [dataArray removeAllObjects]; // clear the array, waiting for new data to return
+//  NSLog(@"CLEARING DATA ARRAY");
   
   NSMutableDictionary *headerFields = [NSMutableDictionary dictionary];
   [headerFields setValue:@"iOS" forKey:@"x-client-identifier"];
   [headerFields setValue:@"application/json" forKey:@"Accept"];
   HTTPEngine *httpEngine = [[HTTPEngine alloc] initWithHostName:@"www.googleapis.com" customHeaderFields:headerFields];
   [httpEngine eventsFrom:startDate to:lastDate onCompletion:^(NSMutableArray *returnedEvents) {
-    // reload table data
-    [returnedEvents enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
-      Event *e = [[Event alloc] initWithDictionary:[returnedEvents objectAtIndex:index]];
-      [dataArray addObject:e];
-    }];
-    [[self tableView] reloadData]; // new events are in, reload table
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    [cal setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    
+    NSDateComponents *comp = [cal components:(NSMonthCalendarUnit | NSMinuteCalendarUnit | NSYearCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit | NSSecondCalendarUnit) fromDate:startDate];
+    
+    NSDate *ds = [cal dateFromComponents:comp];
+    
+    NSMutableArray *temp = [[NSMutableArray alloc] init];
+    NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] init];
+    
+    // Init offset components to increment days in the loop by one each time
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    [offsetComponents setDay:1];
+    
+    
+    while (YES) {
+      NSLog(@"!!! %@", ds);
+      
+      // Is the date beyond the last date? If so, exit the loop.
+      // NSOrderedDescending = the left value is greater than the right
+      if ([ds compare:lastDate] == NSOrderedDescending) {
+        break;
+      }
+      NSMutableArray *eventsFound = [self getEventsForDate:ds from:returnedEvents];
+      
+      if ([eventsFound count] > 0) {
+//        [[self dataArray] addObject:[NSNumber numberWithBool:YES]];
+//        [[self dataDictionary] setObject:eventsFound forKey:currentDate];
+        [tempDict setObject:eventsFound forKey:ds];
+        
+        [temp addObject:[NSNumber numberWithBool:YES]];
+        //        NSLog(@"%@ - Events found: %d", currentDate, [eventsFound count]);
+        //        NSLog(@"ADDING YES");
+      }
+      else {
+        // no events found
+        [temp addObject:[NSNumber numberWithBool:NO]];
+//        [[self dataArray] addObject:[NSNumber numberWithBool:NO]];
+        //        NSLog(@"ADDING NO");        
+      }
+      
+      // Increment day using offset components (ie, 1 day in this instance)
+      ds = [cal dateByAddingComponents:offsetComponents toDate:ds options:0];
+    }
+    [self setDataArray:temp];
+    [self setDataDictionary:tempDict];
+    [[self monthView] reload]; // reload the month, new events in
   }
                  onError:^(NSError *error) {
                    NSLog(@"%@", error);
                  }];
-//	[self generateRandomDataForStartDate:startDate endDate:lastDate];
 	return dataArray;
 }
 - (void) calendarMonthView:(TKCalendarMonthView*)monthView didSelectDate:(NSDate*)date{
@@ -91,49 +136,35 @@
   UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
   
-	
+	NSLog(@"%d", indexPath.row);
   
 	NSArray *ar = [dataDictionary objectForKey:[self.monthView dateSelected]];
-	cell.textLabel.text = [ar objectAtIndex:indexPath.row];
+//  NSLog(@"%@", ar);
+  Event *event = [ar objectAtIndex:indexPath.row];
+  NSLog(@"%@", event);
+//  NSLog(@"%@", [[self monthView] dateSelected]);
+  
+//	cell.textLabel.text = [ar objectAtIndex:indexPath.row];
+  cell.textLabel.text = [event summary];
 	
   return cell;
 	
 }
 
+- (NSMutableArray *) getEventsForDate:(NSDate *)date from:(NSMutableArray *)queriedEvents {
+  NSMutableArray *events = [[NSMutableArray alloc] init];
+  
+  [queriedEvents enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
+    Event *e = [[Event alloc] initWithDictionary:[queriedEvents objectAtIndex:index]];
 
-- (void) generateRandomDataForStartDate:(NSDate*)start endDate:(NSDate*)end{
-	// this function sets up dataArray & dataDictionary
-	// dataArray: has boolean markers for each day to pass to the calendar view (via the delegate function)
-	// dataDictionary: has items that are associated with date keys (for tableview)
-	
-	
-	NSLog(@"Delegate Range: %@ %@ %d",start,end,[start daysBetweenDate:end]);
-	
-	self.dataArray = [NSMutableArray array];
-	self.dataDictionary = [NSMutableDictionary dictionary];
-	
-	NSDate *d = start;
-	while(YES){
-		
-		int r = arc4random();
-		if(r % 3==1){
-			[self.dataDictionary setObject:[NSArray arrayWithObjects:@"Item one",@"Item two",nil] forKey:d];
-			[self.dataArray addObject:[NSNumber numberWithBool:YES]];
-			
-		}else if(r%4==1){
-			[self.dataDictionary setObject:[NSArray arrayWithObjects:@"Item one",nil] forKey:d];
-			[self.dataArray addObject:[NSNumber numberWithBool:YES]];
-			
-		}else
-			[self.dataArray addObject:[NSNumber numberWithBool:NO]];
-		
-		
-		TKDateInformation info = [d dateInformationWithTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-		info.day++;
-		d = [NSDate dateFromDateInformation:info timeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-		if([d compare:end]==NSOrderedDescending) break;
-	}
-	
+    NSDate *startTime = [e startTime];
+    NSLog(@"%@", [e summary]);
+    if ([date isSameDay:startTime]) {
+      [events addObject:e];
+    }
+  }];
+  
+  return events;
 }
 
 @end
