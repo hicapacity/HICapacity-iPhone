@@ -34,6 +34,8 @@
 
 - (NSArray*) calendarMonthView:(TKCalendarMonthView*)monthView marksFromDate:(NSDate*)startDate toDate:(NSDate*)lastDate {
   if ([lastStartDate isSameDay:startDate] && [lastEndDate isSameDay:lastDate]) {
+    // Do not query again. The query dates match. This happens if the table is manually reloaded.
+    // The table will be manually reloaded after the async call to the Google Calendar API is returned.
     return dataArray;
   }
   
@@ -44,7 +46,6 @@
   lastEndDate = lastDate;
   
   [dataArray removeAllObjects]; // clear the array, waiting for new data to return
-//  NSLog(@"CLEARING DATA ARRAY");
   
   NSMutableDictionary *headerFields = [NSMutableDictionary dictionary];
   [headerFields setValue:@"iOS" forKey:@"x-client-identifier"];
@@ -58,17 +59,15 @@
     
     NSDate *ds = [cal dateFromComponents:comp];
     
-    NSMutableArray *temp = [[NSMutableArray alloc] init];
-    NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] init];
+    NSMutableArray *datesArray = [[NSMutableArray alloc] init];
+    NSMutableDictionary *eventsDictionary = [[NSMutableDictionary alloc] init];
     
     // Init offset components to increment days in the loop by one each time
     NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
     [offsetComponents setDay:1];
     
     
-    while (YES) {
-      NSLog(@"!!! %@", ds);
-      
+    while (YES) {      
       // Is the date beyond the last date? If so, exit the loop.
       // NSOrderedDescending = the left value is greater than the right
       if ([ds compare:lastDate] == NSOrderedDescending) {
@@ -77,31 +76,25 @@
       NSMutableArray *eventsFound = [self getEventsForDate:ds from:returnedEvents];
       
       if ([eventsFound count] > 0) {
-//        [[self dataArray] addObject:[NSNumber numberWithBool:YES]];
-//        [[self dataDictionary] setObject:eventsFound forKey:currentDate];
-        [tempDict setObject:eventsFound forKey:ds];
+        [eventsDictionary setObject:eventsFound forKey:ds];
         
-        [temp addObject:[NSNumber numberWithBool:YES]];
-        //        NSLog(@"%@ - Events found: %d", currentDate, [eventsFound count]);
-        //        NSLog(@"ADDING YES");
+        [datesArray addObject:[NSNumber numberWithBool:YES]];
       }
       else {
         // no events found
-        [temp addObject:[NSNumber numberWithBool:NO]];
-//        [[self dataArray] addObject:[NSNumber numberWithBool:NO]];
-        //        NSLog(@"ADDING NO");        
+        [datesArray addObject:[NSNumber numberWithBool:NO]];    
       }
       
       // Increment day using offset components (ie, 1 day in this instance)
       ds = [cal dateByAddingComponents:offsetComponents toDate:ds options:0];
     }
-    [self setDataArray:temp];
-    [self setDataDictionary:tempDict];
-    [[self monthView] reload]; // reload the month, new events in
+    [self setDataArray:datesArray];
+    [self setDataDictionary:eventsDictionary];
+    [[self monthView] reload]; // reload the month view since new events were loaded
   }
                  onError:^(NSError *error) {
                    NSLog(@"%@", error);
-                 }];
+                 }]; // end of completion block
 	return dataArray;
 }
 - (void) calendarMonthView:(TKCalendarMonthView*)monthView didSelectDate:(NSDate*)date{
@@ -136,15 +129,8 @@
   UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
   
-	NSLog(@"%d", indexPath.row);
-  
 	NSArray *ar = [dataDictionary objectForKey:[self.monthView dateSelected]];
-//  NSLog(@"%@", ar);
   Event *event = [ar objectAtIndex:indexPath.row];
-  NSLog(@"%@", event);
-//  NSLog(@"%@", [[self monthView] dateSelected]);
-  
-//	cell.textLabel.text = [ar objectAtIndex:indexPath.row];
   cell.textLabel.text = [event summary];
 	
   return cell;
@@ -155,13 +141,17 @@
   NSMutableArray *events = [[NSMutableArray alloc] init];
   
   [queriedEvents enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
-    Event *e = [[Event alloc] initWithDictionary:[queriedEvents objectAtIndex:index]];
+    Event *e = [queriedEvents objectAtIndex:index];
 
     NSDate *startTime = [e startTime];
-    NSLog(@"%@", [e summary]);
     if ([date isSameDay:startTime]) {
       [events addObject:e];
     }
+   else if ([startTime compare:date] == NSOrderedDescending) {
+     // events returned from Google Calendar are in ascending order
+     // if the event time is greater than the date we are checking, we can break out of the enumeration
+     *stop = YES;
+   }
   }];
   
   return events;

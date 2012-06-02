@@ -1,4 +1,5 @@
 #import "HTTPEngine.h"
+#import "Event.h"
 @implementation HTTPEngine
 
 -(MKNetworkOperation*) posts:
@@ -45,16 +46,20 @@
                                                ssl:YES];
   [op onCompletion:^(MKNetworkOperation *completedOperation) {
     NSDictionary *responseDictionary = [completedOperation responseJSON];
-//    NSLog(@"%@", [responseDictionary objectForKey:@"items"]);
-    NSMutableArray *events = [responseDictionary objectForKey:@"items"];
+    NSMutableArray *jsonEvents = [responseDictionary objectForKey:@"items"];
+    
+    NSMutableArray *events = [[NSMutableArray alloc] initWithCapacity:[jsonEvents count]];
 
-//    NSMutableArray *events = [[NSMutableArray alloc] init];
+    [jsonEvents enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
+      Event *e = [[Event alloc] initWithDictionary:[jsonEvents objectAtIndex:index]];
+      [events addObject:e];
+    }];
     
     if([completedOperation isCachedResponse]) {
-//      NSLog(@"Data from cache %@", responseDictionary);
+      //NSLog(@"Data from cache %@", responseDictionary);
     }
     else {
-//      NSLog(@"Data from server %@", responseDictionary);
+      //NSLog(@"Data from server %@", responseDictionary);
     }
     completionBlock(events);
   }
