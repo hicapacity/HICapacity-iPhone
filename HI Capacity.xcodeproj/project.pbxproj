@@ -17,9 +17,9 @@
 		09A445A21567A6CD00634C53 /* UIImage+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A445991567A6CD00634C53 /* UIImage+TKCategory.m */; };
 		09A445A31567A6CD00634C53 /* UIView+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A4459B1567A6CD00634C53 /* UIView+TKCategory.m */; };
 		09A445B11568645D00634C53 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A445B01568645D00634C53 /* CalendarViewController.m */; };
-		09B27FEB157CBB940015FF1A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 09B27FE8157CBB940015FF1A /* SVProgressHUD.bundle */; };
-		09B27FEC157CBB940015FF1A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B27FEA157CBB940015FF1A /* SVProgressHUD.m */; };
 		09B27FF0157CBBDC0015FF1A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B27FEE157CBBAE0015FF1A /* QuartzCore.framework */; };
+		09B27FF5157D55A00015FF1A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 09B27FF2157D55A00015FF1A /* SVProgressHUD.bundle */; };
+		09B27FF6157D55A00015FF1A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B27FF4157D55A00015FF1A /* SVProgressHUD.m */; };
 		09F56C69157B73B30028ACEB /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F56C68157B73B30028ACEB /* EventDetailsViewController.m */; };
 		A39E33ED155FA29F0076ED6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E33EC155FA29F0076ED6D /* UIKit.framework */; };
 		A39E33EF155FA29F0076ED6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E33EE155FA29F0076ED6D /* Foundation.framework */; };
@@ -80,10 +80,10 @@
 		09A4459B1567A6CD00634C53 /* UIView+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKCategory.m"; sourceTree = "<group>"; };
 		09A445AF1568645D00634C53 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		09A445B01568645D00634C53 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CalendarViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		09B27FE8157CBB940015FF1A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		09B27FE9157CBB940015FF1A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		09B27FEA157CBB940015FF1A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		09B27FEE157CBBAE0015FF1A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		09B27FF2157D55A00015FF1A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		09B27FF3157D55A00015FF1A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		09B27FF4157D55A00015FF1A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		09F56C67157B73B30028ACEB /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
 		09F56C68157B73B30028ACEB /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
 		A39E33E8155FA29F0076ED6D /* HI Capacity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HI Capacity.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,22 +192,22 @@
 			path = vendor/TapkuLibrary;
 			sourceTree = "<group>";
 		};
-		09B27FE7157CBB940015FF1A /* SVProgressHUD */ = {
+		09B27FF1157D55A00015FF1A /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				09B27FE8157CBB940015FF1A /* SVProgressHUD.bundle */,
-				09B27FE9157CBB940015FF1A /* SVProgressHUD.h */,
-				09B27FEA157CBB940015FF1A /* SVProgressHUD.m */,
+				09B27FF2157D55A00015FF1A /* SVProgressHUD.bundle */,
+				09B27FF3157D55A00015FF1A /* SVProgressHUD.h */,
+				09B27FF4157D55A00015FF1A /* SVProgressHUD.m */,
 			);
 			name = SVProgressHUD;
-			path = ../SVProgressHUD/SVProgressHUD;
+			path = vendor/SVProgressHUD/SVProgressHUD;
 			sourceTree = "<group>";
 		};
 		A39E33DD155FA29E0076ED6D = {
 			isa = PBXGroup;
 			children = (
 				09B27FEE157CBBAE0015FF1A /* QuartzCore.framework */,
-				09B27FE7157CBB940015FF1A /* SVProgressHUD */,
+				09B27FF1157D55A00015FF1A /* SVProgressHUD */,
 				09A4458C1567A6CD00634C53 /* TapkuLibrary */,
 				A39E34281564E0D40076ED6D /* MKNetworkKit */,
 				A39E33F2155FA29F0076ED6D /* HI Capacity */,
@@ -408,7 +408,7 @@
 				A39E3400155FA29F0076ED6D /* MainStoryboard_iPhone.storyboard in Resources */,
 				A39E3403155FA29F0076ED6D /* MainStoryboard_iPad.storyboard in Resources */,
 				09A4459D1567A6CD00634C53 /* TapkuLibrary.bundle in Resources */,
-				09B27FEB157CBB940015FF1A /* SVProgressHUD.bundle in Resources */,
+				09B27FF5157D55A00015FF1A /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +466,7 @@
 				09A445B11568645D00634C53 /* CalendarViewController.m in Sources */,
 				091E407815731F8900EE1F9E /* Event.m in Sources */,
 				09F56C69157B73B30028ACEB /* EventDetailsViewController.m in Sources */,
-				09B27FEC157CBB940015FF1A /* SVProgressHUD.m in Sources */,
+				09B27FF6157D55A00015FF1A /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
