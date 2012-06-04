@@ -56,10 +56,10 @@
     }];
     
     if([completedOperation isCachedResponse]) {
-      //NSLog(@"Data from cache %@", responseDictionary);
+//      NSLog(@"Data from cache %@", responseDictionary);
     }
     else {
-      //NSLog(@"Data from server %@", responseDictionary);
+//      NSLog(@"Data from server %@", responseDictionary);
     }
     completionBlock(events);
   }

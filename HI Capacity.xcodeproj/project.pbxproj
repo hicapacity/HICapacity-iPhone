@@ -17,6 +17,7 @@
 		09A445A21567A6CD00634C53 /* UIImage+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A445991567A6CD00634C53 /* UIImage+TKCategory.m */; };
 		09A445A31567A6CD00634C53 /* UIView+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A4459B1567A6CD00634C53 /* UIView+TKCategory.m */; };
 		09A445B11568645D00634C53 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A445B01568645D00634C53 /* CalendarViewController.m */; };
+		09F56C69157B73B30028ACEB /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F56C68157B73B30028ACEB /* EventDetailsViewController.m */; };
 		A39E33ED155FA29F0076ED6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E33EC155FA29F0076ED6D /* UIKit.framework */; };
 		A39E33EF155FA29F0076ED6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E33EE155FA29F0076ED6D /* Foundation.framework */; };
 		A39E33F1155FA29F0076ED6D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E33F0155FA29F0076ED6D /* CoreGraphics.framework */; };
@@ -76,6 +77,8 @@
 		09A4459B1567A6CD00634C53 /* UIView+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKCategory.m"; sourceTree = "<group>"; };
 		09A445AF1568645D00634C53 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		09A445B01568645D00634C53 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CalendarViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		09F56C67157B73B30028ACEB /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
+		09F56C68157B73B30028ACEB /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
 		A39E33E8155FA29F0076ED6D /* HI Capacity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HI Capacity.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39E33EC155FA29F0076ED6D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A39E33EE155FA29F0076ED6D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -233,6 +236,8 @@
 				C8407A6F15663806001CAB68 /* PostContentViewController.m */,
 				09A445AF1568645D00634C53 /* CalendarViewController.h */,
 				09A445B01568645D00634C53 /* CalendarViewController.m */,
+				09F56C67157B73B30028ACEB /* EventDetailsViewController.h */,
+				09F56C68157B73B30028ACEB /* EventDetailsViewController.m */,
 			);
 			path = "HI Capacity";
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				09A445A31567A6CD00634C53 /* UIView+TKCategory.m in Sources */,
 				09A445B11568645D00634C53 /* CalendarViewController.m in Sources */,
 				091E407815731F8900EE1F9E /* Event.m in Sources */,
+				09F56C69157B73B30028ACEB /* EventDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

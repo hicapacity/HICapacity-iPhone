@@ -50,6 +50,7 @@
  */
 - (id) initWithSunday:(BOOL)sundayFirst;
 
+@property (nonatomic) BOOL useSundayFirst;
  
 /** Returns the month view managed by the controller object. */
 @property (strong,nonatomic) TKCalendarMonthView *monthView;

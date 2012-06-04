@@ -6,20 +6,71 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller - Item-->
+        <scene sceneID="BQ0-JL-NQh">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F4M-Ke-0A4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="d23-Hb-Ml8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="W9Y-PJ-3km"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="57m-sw-xcD">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cgN-mC-IbB" kind="relationship" relationship="rootViewController" id="hbJ-dx-5Rj"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-142" y="505"/>
+        </scene>
         <!--View Controller - Photos-->
         <scene sceneID="YfF-GG-KNf">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8V-fL-7KU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="cgN-mC-IbB" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eUW-DV-8gj">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VIu-Mc-FzG">
+                                <rect key="frame" x="178" y="42" width="122" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Work asshole">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="YkO-u4-zfG" kind="push" identifier="dfgsdfg" id="fYk-Z1-gqd"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Photos" id="yat-oq-zuT"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="jPB-lx-ND5"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="293" y="523"/>
+            <point key="canvasLocation" x="246" y="523"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1aF-nV-kHG">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nx7-nQ-WL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="YkO-u4-zfG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i8u-d9-MDG">
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8M5-GF-FD2"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="686" y="523"/>
         </scene>
         <!--Navigation Controller - Posts-->
         <scene sceneID="LLv-Vl-PKR">
@@ -139,7 +190,7 @@
                     <connections>
                         <segue destination="2PG-ux-Xm6" kind="relationship" relationship="viewControllers" id="Ddd-8C-zKX"/>
                         <segue destination="j4b-DO-kFC" kind="relationship" relationship="viewControllers" id="4y6-vY-NPg"/>
-                        <segue destination="cgN-mC-IbB" kind="relationship" relationship="viewControllers" id="euB-Wx-Uaw"/>
+                        <segue destination="d23-Hb-Ml8" kind="relationship" relationship="viewControllers" id="YJa-En-huq"/>
                     </connections>
                 </tabBarController>
             </objects>
@@ -149,37 +200,92 @@
         <scene sceneID="GCJ-Iz-yen">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gs4-ee-V3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController definesPresentationContext="YES" hidesBottomBarWhenPushed="YES" id="j4b-DO-kFC" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="j4b-DO-kFC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Calendar" id="OQ9-gF-vQQ"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yFg-5Z-pdc">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="lgc-69-1Cm" kind="relationship" relationship="rootViewController" id="6cS-vS-04S"/>
+                        <segue destination="aeK-4w-dFd" kind="relationship" relationship="rootViewController" id="4cM-jx-iec"/>
                     </connections>
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="293" y="-70"/>
         </scene>
         <!--Calendar View Controller-->
-        <scene sceneID="aoh-cy-aBN">
+        <scene sceneID="aRt-ae-TGo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rq9-ge-y8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="lgc-69-1Cm" customClass="CalendarViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aVW-1W-iJU">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cQF-sp-TQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="aeK-4w-dFd" customClass="CalendarViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cwg-Nf-Ylo">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="egt-Kq-fup"/>
+                    <navigationItem key="navigationItem" id="L1R-i1-1nr"/>
+                    <connections>
+                        <segue destination="N5c-iw-DaK" kind="push" identifier="PushEventDetails" id="br5-Sk-bIR"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="701" y="-70"/>
+            <point key="canvasLocation" x="691" y="-70"/>
+        </scene>
+        <!--Event Details View Controller-->
+        <scene sceneID="iU5-ix-6dy">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="trK-cS-Hgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="N5c-iw-DaK" customClass="EventDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9v6-tw-Iwa">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" id="zPp-Uh-Nhx">
+                                <rect key="frame" x="13" y="10" width="295" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="xf0-ps-oiW">
+                                <rect key="frame" x="13" y="84" width="295" height="277"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES" calendarEvent="YES"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="2sd-8b-Ijk">
+                                <rect key="frame" x="13" y="60" width="295" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WV4-8g-mVK"/>
+                    <connections>
+                        <outlet property="eventDescText" destination="xf0-ps-oiW" id="ceq-Pq-ukZ"/>
+                        <outlet property="eventSummaryLabel" destination="zPp-Uh-Nhx" id="ELo-PQ-b5N"/>
+                        <outlet property="eventTimeLabel" destination="2sd-8b-Ijk" id="6rv-Kt-JzK"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1087" y="-70"/>
         </scene>
     </scenes>
     <classes>
         <class className="CalendarViewController" superclassName="TKCalendarMonthTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarViewController.h"/>
+        </class>
+        <class className="EventDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="eventDescText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="eventSummaryLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="eventTimeLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="PostContentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PostContentViewController.h"/>

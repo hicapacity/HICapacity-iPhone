@@ -10,6 +10,7 @@
 #import "NSDate+TKCategory.h"
 #import "HTTPEngine.h"
 #import "Event.h"
+#import "EventDetailsViewController.h"
 
 @interface CalendarViewController ()
 
@@ -20,7 +21,9 @@
 @synthesize dataArray, dataDictionary;
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
-  return [super initWithSunday:YES];
+  self = [super initWithCoder:aDecoder];
+  [self setUseSundayFirst:YES];
+  return self;
 }
 
 - (void)viewDidLoad{
@@ -29,7 +32,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-//  [[[self navigationController] navigationBar] setHidden:YES];
+  // Deselect any selected table row there may be
+  [[super tableView] deselectRowAtIndexPath:[[super tableView] indexPathForSelectedRow] animated:animated];
+  [super viewWillAppear:animated];
 }
 
 - (NSArray*) calendarMonthView:(TKCalendarMonthView*)monthView marksFromDate:(NSDate*)startDate toDate:(NSDate*)lastDate {
@@ -100,10 +105,10 @@
 - (void) calendarMonthView:(TKCalendarMonthView*)monthView didSelectDate:(NSDate*)date{
 	
 	// CHANGE THE DATE TO YOUR TIMEZONE
-	TKDateInformation info = [date dateInformationWithTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-	NSDate *myTimeZoneDay = [NSDate dateFromDateInformation:info timeZone:[NSTimeZone systemTimeZone]];
-	
-	NSLog(@"Date Selected: %@",myTimeZoneDay);
+//	TKDateInformation info = [date dateInformationWithTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+//	NSDate *myTimeZoneDay = [NSDate dateFromDateInformation:info timeZone:[NSTimeZone systemTimeZone]];
+//	
+//	NSLog(@"Date Selected: %@",myTimeZoneDay);
 	
 	[self.tableView reloadData];
 }
@@ -137,6 +142,12 @@
 	
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  // trigger the segue programatically, the table is not in the storyboard because it is from the Tapku lib
+  
+  [self performSegueWithIdentifier:@"PushEventDetails" sender:self];
+}
+
 - (NSMutableArray *) getEventsForDate:(NSDate *)date from:(NSMutableArray *)queriedEvents {
   NSMutableArray *events = [[NSMutableArray alloc] init];
   
@@ -155,6 +166,19 @@
   }];
   
   return events;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+  if ([[segue identifier] isEqualToString:@"PushEventDetails"])
+  {
+    NSDate *selectedDate = [[self monthView] dateSelected];
+    NSMutableArray *events = [dataDictionary objectForKey:selectedDate];
+    NSInteger selectedIndex = [[[self tableView] indexPathForSelectedRow] row];
+    
+    EventDetailsViewController *eventDetailsViewController = [segue destinationViewController];
+    [eventDetailsViewController setEvent:[events objectAtIndex:selectedIndex]];
+  }
 }
 
 @end

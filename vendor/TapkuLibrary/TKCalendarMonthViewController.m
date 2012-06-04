@@ -33,20 +33,21 @@
 
 
 @interface TKCalendarMonthViewController () {
-	BOOL _sundayFirst;
+
 }
 
 @end
 
 @implementation TKCalendarMonthViewController
 @synthesize monthView = _monthView;
+@synthesize useSundayFirst;
 
 - (id) init{
 	return [self initWithSunday:YES];
 }
 - (id) initWithSunday:(BOOL)sundayFirst{
 	if(!(self = [super init])) return nil;
-	_sundayFirst = sundayFirst;
+	[self setUseSundayFirst:sundayFirst];
 	return self;
 }
 
@@ -62,7 +63,7 @@
 - (void) loadView{
 	[super loadView];
 	
-	_monthView = [[TKCalendarMonthView alloc] initWithSundayAsFirst:_sundayFirst];
+	_monthView = [[TKCalendarMonthView alloc] initWithSundayAsFirst:useSundayFirst];
 	_monthView.delegate = self;
 	_monthView.dataSource = self;
 	[self.view addSubview:_monthView];
