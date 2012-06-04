@@ -11,6 +11,7 @@
 #import "HTTPEngine.h"
 #import "Event.h"
 #import "EventDetailsViewController.h"
+#import "SVProgressHUD.h"
 
 @interface CalendarViewController ()
 
@@ -45,6 +46,7 @@
   }
   
   // Dates don't match, need to perform a new asynchronous query
+  [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeClear];
   
   // keep track of the last start and end dates queried for
   lastStartDate = startDate;
@@ -96,6 +98,8 @@
     [self setDataArray:datesArray];
     [self setDataDictionary:eventsDictionary];
     [[self monthView] reload]; // reload the month view since new events were loaded
+    
+    [SVProgressHUD dismiss];
   }
                  onError:^(NSError *error) {
                    NSLog(@"%@", error);
@@ -181,4 +185,7 @@
   }
 }
 
+- (void)viewDidUnload {
+  [super viewDidUnload];
+}
 @end

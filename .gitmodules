@@ -1,3 +1,6 @@
 [submodule "vendor/MKNetworkKit"]
 	path = vendor/MKNetworkKit
 	url = https://github.com/MugunthKumar/MKNetworkKit.git
+[submodule "vendor/SVProgressHUD"]
+	path = vendor/SVProgressHUD
+	url = https://github.com/samvermette/SVProgressHUD.git
