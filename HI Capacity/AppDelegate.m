@@ -6,22 +6,13 @@
 @synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  NSLog(@"did finish launching");
-  /*
-  NSMutableDictionary *headerFields = [NSMutableDictionary dictionary];
-  [headerFields setValue:@"iOS" forKey:@"x-client-identifier"];
-  [headerFields setValue:@"application/json" forKey:@"Accept"];
-  HTTPEngine *httpEngine = [[HTTPEngine alloc] initWithHostName:@"hicapacity.org" customHeaderFields:headerFields];
-  [httpEngine posts:nil :^(NSMutableArray *posts) {
-    for (NSDictionary *post in posts) {
-      NSLog(@"%@", [post objectForKey:@"title"]);
-    }
-  }
-            onError:^(NSError *error) {
-              // please handle the error
-            }];
-  */
-  // Override point for customization after application launch.
+    // Navigation bar background
+    UIImage *navbg = [[UIImage imageNamed:@"navbar"] 
+                      resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    // Set the background image for *all UINavigationBars
+    [[UINavigationBar appearance] setBackgroundImage:navbg 
+                                       forBarMetrics:UIBarMetricsDefault];
+    [[UIBarButtonItem appearance] setTintColor:[UIColor darkGrayColor]];
   return YES;
 }
 

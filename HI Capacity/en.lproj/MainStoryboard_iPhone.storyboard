@@ -11,7 +11,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4M-Ke-0A4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="d23-Hb-Ml8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="W9Y-PJ-3km"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="42-info.png" id="W9Y-PJ-3km"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="57m-sw-xcD">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -77,7 +77,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41i-xb-RFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="2PG-ux-Xm6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Posts" id="9wo-1B-dLL"/>
+                    <tabBarItem key="tabBarItem" title="Posts" image="166-newspaper.png" id="9wo-1B-dLL"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="7xm-M9-KHg">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -88,7 +88,7 @@
             </objects>
             <point key="canvasLocation" x="152" y="-674"/>
         </scene>
-        <!--Posts View Controller - Posts-->
+        <!--Posts View Controller-->
         <scene sceneID="Qoe-61-JaK">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvq-Vh-lJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -116,7 +116,7 @@
                             <outlet property="delegate" destination="XnU-zb-nSe" id="wIC-mh-mBm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Posts" id="IPQ-Df-kPx"/>
+                    <navigationItem key="navigationItem" id="IPQ-Df-kPx"/>
                     <connections>
                         <outlet property="postTableView" destination="IWc-s4-Wct" id="bgd-aG-rGF"/>
                     </connections>
@@ -128,13 +128,13 @@
         <scene sceneID="n90-uB-W7B">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGV-D6-UUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="pRg-1y-YNb" customClass="PostContentViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="pRg-1y-YNb" customClass="PostContentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9zc-1b-sV1">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" id="1iJ-DS-upn">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" id="vMO-MZ-4Ig">
@@ -145,14 +145,14 @@
                                         <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="9Cv-6D-JZ7">
-                                        <rect key="frame" x="20" y="66" width="280" height="21"/>
+                                        <rect key="frame" x="20" y="78" width="280" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <webView contentMode="scaleToFill" scalesPageToFit="YES" id="HPi-ou-aDx">
-                                        <rect key="frame" x="20" y="95" width="280" height="272"/>
+                                        <rect key="frame" x="20" y="107" width="280" height="289"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -166,6 +166,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="fP1-VH-fKk"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="contentLabel" destination="HPi-ou-aDx" id="Tpz-vx-Au0"/>
                         <outlet property="dateLabel" destination="9Cv-6D-JZ7" id="kbg-dV-Xcq"/>
@@ -201,7 +202,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gs4-ee-V3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="j4b-DO-kFC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calendar" id="OQ9-gF-vQQ"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="83-calendar.png" id="OQ9-gF-vQQ"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yFg-5Z-pdc">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -275,6 +276,45 @@
             <point key="canvasLocation" x="1087" y="-70"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="166-newspaper.png" width="28" height="23"/>
+        <image name="42-info.png" width="28" height="28"/>
+        <image name="83-calendar.png" width="23" height="25"/>
+    </resources>
+    <classes>
+        <class className="CalendarViewController" superclassName="TKCalendarMonthTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarViewController.h"/>
+        </class>
+        <class className="EventDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="eventDescText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="eventSummaryLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="eventTimeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PostContentViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PostContentViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="contentLabel" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PostsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PostsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="postTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="TKCalendarMonthTableViewController" superclassName="TKCalendarMonthViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TKCalendarMonthTableViewController.h"/>
+        </class>
+        <class className="TKCalendarMonthViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TKCalendarMonthViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

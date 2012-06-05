@@ -34,9 +34,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    // Set the title of the view
-    [self setTitle:[post objectForKey:@"title"]];
-    
     // Set the post title label
     [titleLabel setText:[post objectForKey:@"title"]];
     [titleLabel setNumberOfLines:0];
@@ -48,7 +45,8 @@
     
     // Set the date label
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init]; 
-    [dateFormat setDateFormat:@"EEE, d MMM yyyy HH:mm:ss ZZZ"]; 
+    [dateFormat setDateFormat:@"EEE, d MMM yyyy HH:mm:ss ZZZ"];
+    [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
     NSDate *newDate = [dateFormat dateFromString:[post objectForKey:@"date"]];  
     [dateFormat setDateFormat:@"EEEE, d MMM yyyy h:mm"];
     [dateLabel setText:[NSString stringWithFormat:@"(%@)", [dateFormat stringFromDate:newDate]]];
