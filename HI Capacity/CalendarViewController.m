@@ -37,12 +37,17 @@
   // Deselect any selected table row there may be
   [[super tableView] deselectRowAtIndexPath:[[super tableView] indexPathForSelectedRow] animated:animated];
   [super viewWillAppear:animated];
+  
+  // Check if operation is still running, if it is show the loading box again
+  if (runningOp != nil && [runningOp isExecuting]) {
+    [self showLoading];
+  }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
   [super viewDidDisappear:animated];
   // Hide the loading box?
-  [SVProgressHUD dismiss];
+  [self dismissLoading:NO];
 }
 
 - (NSArray*) calendarMonthView:(TKCalendarMonthView*)monthView marksFromDate:(NSDate*)startDate toDate:(NSDate*)lastDate {
@@ -65,7 +70,7 @@
   [headerFields setValue:@"iOS" forKey:@"x-client-identifier"];
   [headerFields setValue:@"application/json" forKey:@"Accept"];
   HTTPEngine *httpEngine = [[HTTPEngine alloc] initWithHostName:@"www.googleapis.com" customHeaderFields:headerFields];
-  [httpEngine eventsFrom:startDate to:lastDate onCompletion:^(NSMutableArray *returnedEvents) {
+  runningOp = [httpEngine eventsFrom:startDate to:lastDate onCompletion:^(NSMutableArray *returnedEvents) {
     NSCalendar *cal = [NSCalendar currentCalendar];
     [cal setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     
@@ -107,10 +112,12 @@
     [[self monthView] reload]; // reload the month view since new events were loaded
     
     [self dismissLoading:NO];
+    runningOp = nil;
   }
                  onError:^(NSError *error) {
                    NSLog(@"%@", error);
                    [self dismissLoading:YES];
+                   runningOp = nil;
                  }]; // end of completion block
 	return dataArray;
 }

@@ -12,6 +12,7 @@
 @interface CalendarViewController : TKCalendarMonthTableViewController {
   NSDate *lastStartDate;
   NSDate *lastEndDate;
+  MKNetworkOperation *runningOp;
 }
 
 @property (retain,nonatomic) NSMutableArray *dataArray;
