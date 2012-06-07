@@ -34,7 +34,7 @@
 	// Do any additional setup after loading the view.
   
   // Set the title of the view
-  [self setTitle:[event summary]];
+//  [self setTitle:[event summary]];
   [[self eventSummaryLabel] setText:[event summary]];
   [[self eventDescText] setText:[event description]];
 

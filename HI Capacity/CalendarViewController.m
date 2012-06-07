@@ -14,7 +14,8 @@
 #import "SVProgressHUD.h"
 
 @interface CalendarViewController ()
-
+- (void) showLoading;
+- (void) dismissLoading:(BOOL)error;
 @end
 
 @implementation CalendarViewController
@@ -38,6 +39,12 @@
   [super viewWillAppear:animated];
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+  [super viewDidDisappear:animated];
+  // Hide the loading box?
+  [SVProgressHUD dismiss];
+}
+
 - (NSArray*) calendarMonthView:(TKCalendarMonthView*)monthView marksFromDate:(NSDate*)startDate toDate:(NSDate*)lastDate {
   if ([lastStartDate isSameDay:startDate] && [lastEndDate isSameDay:lastDate]) {
     // Do not query again. The query dates match. This happens if the table is manually reloaded.
@@ -46,7 +53,7 @@
   }
   
   // Dates don't match, need to perform a new asynchronous query
-  [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeClear];
+  [self showLoading];
   
   // keep track of the last start and end dates queried for
   lastStartDate = startDate;
@@ -99,10 +106,11 @@
     [self setDataDictionary:eventsDictionary];
     [[self monthView] reload]; // reload the month view since new events were loaded
     
-    [SVProgressHUD dismiss];
+    [self dismissLoading:NO];
   }
                  onError:^(NSError *error) {
                    NSLog(@"%@", error);
+                   [self dismissLoading:YES];
                  }]; // end of completion block
 	return dataArray;
 }
@@ -187,5 +195,19 @@
 
 - (void)viewDidUnload {
   [super viewDidUnload];
+}
+
+- (void) showLoading {
+  [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeNone];
+  [[[self view] subviews]makeObjectsPerformSelector:@selector(setUserInteractionEnabled:) withObject:[NSNumber numberWithBool:FALSE]];
+}
+- (void) dismissLoading:(BOOL)error {
+  if (error) {
+    [SVProgressHUD dismissWithError:@"Unable to load data."];
+  }
+  else {
+    [SVProgressHUD dismiss];
+  }
+  [[[self view] subviews]makeObjectsPerformSelector:@selector(setUserInteractionEnabled:) withObject:[NSNumber numberWithBool:TRUE]];
 }
 @end

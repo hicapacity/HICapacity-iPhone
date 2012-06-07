@@ -6,13 +6,14 @@
 @synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Navigation bar background
-    UIImage *navbg = [[UIImage imageNamed:@"navbar"] 
-                      resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-    // Set the background image for *all UINavigationBars
-    [[UINavigationBar appearance] setBackgroundImage:navbg 
-                                       forBarMetrics:UIBarMetricsDefault];
-    [[UIBarButtonItem appearance] setTintColor:[UIColor darkGrayColor]];
+  // Navigation bar background
+  UIImage *navbg = [[UIImage imageNamed:@"navbar"] 
+                    resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+  // Set the background image for *all UINavigationBars
+  [[UINavigationBar appearance] setBackgroundImage:navbg 
+                                     forBarMetrics:UIBarMetricsDefault];
+  [[UIBarButtonItem appearance] setTintColor:[UIColor darkGrayColor]];
+  [[UITabBar appearance] setSelectedImageTintColor:[UIColor redColor]];
   return YES;
 }
 
