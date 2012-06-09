@@ -60,6 +60,11 @@
   // Dates don't match, need to perform a new asynchronous query
   [self showLoading];
   
+  // Cancel any previous query
+  if (runningOp != nil) {
+    [runningOp cancel];
+  }
+  
   // keep track of the last start and end dates queried for
   lastStartDate = startDate;
   lastEndDate = lastDate;
