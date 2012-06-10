@@ -6,6 +6,8 @@
 @synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  
+  
   // Navigation bar background
   UIImage *navbg = [[UIImage imageNamed:@"navbar"] 
                     resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
