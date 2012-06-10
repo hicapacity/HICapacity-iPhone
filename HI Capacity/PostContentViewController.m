@@ -32,8 +32,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
+
+    // Load HI Capacity logo
+    UIImage *image = [UIImage imageNamed: @"logo"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage: image];
+    self.navigationItem.titleView = imageView;
+  
     // Set the post title label
     [titleLabel setText:[post objectForKey:@"title"]];
     [titleLabel setNumberOfLines:0];

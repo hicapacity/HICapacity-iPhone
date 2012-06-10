@@ -37,7 +37,11 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+  
+    // Load HI Capacity logo
+    UIImage *image = [UIImage imageNamed: @"logo"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage: image];
+    self.navigationItem.titleView = imageView;
     
     NSMutableDictionary *headerFields = [NSMutableDictionary dictionary];
     [headerFields setValue:@"iOS" forKey:@"x-client-identifier"];

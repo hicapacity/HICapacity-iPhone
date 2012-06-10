@@ -6,12 +6,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - About-->
         <scene sceneID="BQ0-JL-NQh">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4M-Ke-0A4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="d23-Hb-Ml8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="42-info.png" id="W9Y-PJ-3km"/>
+                    <tabBarItem key="tabBarItem" title="About" image="42-info.png" id="W9Y-PJ-3km"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="57m-sw-xcD">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

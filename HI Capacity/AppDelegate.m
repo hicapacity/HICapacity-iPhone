@@ -12,8 +12,18 @@
   // Set the background image for *all UINavigationBars
   [[UINavigationBar appearance] setBackgroundImage:navbg 
                                      forBarMetrics:UIBarMetricsDefault];
-  [[UIBarButtonItem appearance] setTintColor:[UIColor darkGrayColor]];
-  [[UITabBar appearance] setSelectedImageTintColor:[UIColor redColor]];
+  
+  [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+  // [[UITabBar appearance] setSelectedImageTintColor:[UIColor redColor]]; 
+  [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabbar"]];
+  UIImage *tabIndicatorImage = [[UIImage imageNamed:@"selected"] 
+                                resizableImageWithCapInsets:UIEdgeInsetsMake(0, 8, 0, 8)];
+  [[UITabBar appearance] setSelectionIndicatorImage:tabIndicatorImage];
+  [[UIScrollView appearance] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"noise"]]];
+  [[UITableView appearance] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"noise"]]];
+  
+  [[UIApplication sharedApplication] 
+   setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:NO];
   return YES;
 }
 

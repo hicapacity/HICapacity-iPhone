@@ -31,10 +31,12 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-	// Do any additional setup after loading the view.
+  // Load HI Capacity logo
+  UIImage *image = [UIImage imageNamed: @"logo"];
+  UIImageView *imageView = [[UIImageView alloc] initWithImage: image];
+  self.navigationItem.titleView = imageView;
+  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noise"]];
   
-  // Set the title of the view
-//  [self setTitle:[event summary]];
   [[self eventSummaryLabel] setText:[event summary]];
   [[self eventDescText] setText:[event description]];
 

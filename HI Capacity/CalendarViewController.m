@@ -31,6 +31,10 @@
 - (void)viewDidLoad{
 	[super viewDidLoad];
 	[self.monthView selectDate:[NSDate month]];
+  // Load HI Capacity logo
+  UIImage *image = [UIImage imageNamed: @"logo"];
+  UIImageView *imageView = [[UIImageView alloc] initWithImage: image];
+  self.navigationItem.titleView = imageView;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
