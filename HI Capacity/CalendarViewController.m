@@ -35,6 +35,7 @@
   UIImage *image = [UIImage imageNamed: @"logo"];
   UIImageView *imageView = [[UIImageView alloc] initWithImage: image];
   self.navigationItem.titleView = imageView;
+  self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noise"]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
