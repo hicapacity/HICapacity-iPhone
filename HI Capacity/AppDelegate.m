@@ -7,6 +7,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   
+  UIImageView *splash = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"launch"]];
+  [self.window.rootViewController.view addSubview:splash];
+  
+  [UIView animateWithDuration:0.75 
+                   animations:^{
+                     splash.alpha = 0;
+                   }
+                   completion:^(BOOL finished) {
+                     [splash removeFromSuperview];
+                   }];
   
   // Navigation bar background
   UIImage *navbg = [[UIImage imageNamed:@"navbar"] 
