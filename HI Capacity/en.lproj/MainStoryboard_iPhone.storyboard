@@ -16,61 +16,82 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="cgN-mC-IbB" kind="relationship" relationship="rootViewController" id="hbJ-dx-5Rj"/>
+                        <segue destination="YiN-kS-nBu" kind="relationship" relationship="rootViewController" id="VrP-bJ-w2n"/>
                     </connections>
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="-142" y="505"/>
         </scene>
-        <!--View Controller - Photos-->
-        <scene sceneID="YfF-GG-KNf">
+        <!--About View Controller-->
+        <scene sceneID="Q4k-jL-oLr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M8V-fL-7KU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="cgN-mC-IbB" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eUW-DV-8gj">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WWe-ZX-OfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="YiN-kS-nBu" customClass="AboutViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="odI-Xq-ZvE">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VIu-Mc-FzG">
-                                <rect key="frame" x="178" y="42" width="122" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Work asshole">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="YkO-u4-zfG" kind="push" identifier="dfgsdfg" id="fYk-Z1-gqd"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="fjU-YR-FPC">
+                                <rect key="frame" x="0.0" y="-5" width="320" height="372"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="2fw-O5-MdH">
+                                        <rect key="frame" x="0.0" y="5" width="320" height="101"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </mapView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="Peo-Os-jG4">
+                                        <rect key="frame" x="0.0" y="146" width="320" height="244"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <string key="text">HI Capacity started in January of 2011 when a handful of people had a desire to make Honolulu's first makerspace a reality. HI Capacity met at coffee shops on Saturdays and held public events. As more members joined there was a need for a permanent home. In October of 2011 the dream of having a dedicated space became one step closer. The Box Jelly graciously allowed HI Capacity to share their space and finally have a location. In July of 2012 HI Capacity will re-open again in their own space. Exciting times are ahead.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="307c Kamani Street" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="qLH-LN-7lP">
+                                        <rect key="frame" x="7" y="106" width="157" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Honolulu, Hawaii 96813" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="mhs-TH-Gws">
+                                        <rect key="frame" x="7" y="123" width="157" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NZY-aM-Zd8">
+                                        <rect key="frame" x="248" y="105" width="72" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal" image="pin_map.png">
+                                            <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="mapButtonClicked:" destination="YiN-kS-nBu" eventType="touchUpInside" id="W8N-NS-jYS"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="top" image="line.png" id="8gS-Ys-u5Y">
+                                        <rect key="frame" x="0.0" y="147" width="320" height="9"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Photos" id="yat-oq-zuT"/>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="jPB-lx-ND5"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" id="iAg-39-Eh2"/>
+                    <connections>
+                        <outlet property="mapView" destination="2fw-O5-MdH" id="Si0-VU-Zog"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="246" y="523"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="1aF-nV-kHG">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nx7-nQ-WL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="YkO-u4-zfG" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="i8u-d9-MDG">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="8M5-GF-FD2"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="686" y="523"/>
+            <point key="canvasLocation" x="293" y="505"/>
         </scene>
         <!--Navigation Controller - Posts-->
         <scene sceneID="LLv-Vl-PKR">
@@ -280,7 +301,50 @@
         <image name="166-newspaper.png" width="28" height="23"/>
         <image name="42-info.png" width="28" height="28"/>
         <image name="83-calendar.png" width="23" height="25"/>
+        <image name="line.png" width="320" height="2"/>
+        <image name="pin_map.png" width="24" height="24"/>
     </resources>
+    <classes>
+        <class className="AboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="mapButtonClicked:"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="CalendarViewController" superclassName="TKCalendarMonthTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarViewController.h"/>
+        </class>
+        <class className="EventDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="eventDescText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="eventSummaryLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="eventTimeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PostContentViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PostContentViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="contentLabel" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PostsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PostsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="postTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="TKCalendarMonthTableViewController" superclassName="TKCalendarMonthViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TKCalendarMonthTableViewController.h"/>
+        </class>
+        <class className="TKCalendarMonthViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TKCalendarMonthViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

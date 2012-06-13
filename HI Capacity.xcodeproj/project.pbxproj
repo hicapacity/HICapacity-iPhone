@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0907D664158721E2009C395E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0907D663158721E2009C395E /* AboutViewController.m */; };
+		0907D66E15873BF9009C395E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0907D66D15873BF9009C395E /* MapKit.framework */; };
+		0907D67115873DF6009C395E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 0907D67015873DF6009C395E /* Location.m */; };
 		091E407815731F8900EE1F9E /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 091E407715731F8900EE1F9E /* Event.m */; };
+		09359FE4158892AD00B4EA3E /* noise.png in Resources */ = {isa = PBXBuildFile; fileRef = 09359FE3158892AD00B4EA3E /* noise.png */; };
+		09359FE81588930300B4EA3E /* pin_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 09359FE61588930300B4EA3E /* pin_map.png */; };
+		09359FE91588930300B4EA3E /* pin_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09359FE71588930300B4EA3E /* pin_map@2x.png */; };
+		09359FEB1588974400B4EA3E /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09359FEA1588974400B4EA3E /* line@2x.png */; };
+		09359FED1588977500B4EA3E /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 09359FEC1588977500B4EA3E /* line.png */; };
 		09A4459C1567A6CD00634C53 /* NSDate+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A4458E1567A6CD00634C53 /* NSDate+TKCategory.m */; };
 		09A4459D1567A6CD00634C53 /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 09A4458F1567A6CD00634C53 /* TapkuLibrary.bundle */; };
 		09A4459E1567A6CD00634C53 /* TKCalendarMonthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A445911567A6CD00634C53 /* TKCalendarMonthTableViewController.m */; };
@@ -28,7 +36,6 @@
 		A39E33F9155FA29F0076ED6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A39E33F8155FA29F0076ED6D /* main.m */; };
 		A39E33FD155FA29F0076ED6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A39E33FC155FA29F0076ED6D /* AppDelegate.m */; };
 		A39E3400155FA29F0076ED6D /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39E33FE155FA29F0076ED6D /* MainStoryboard_iPhone.storyboard */; };
-		A39E3403155FA29F0076ED6D /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39E3401155FA29F0076ED6D /* MainStoryboard_iPad.storyboard */; };
 		A39E340E155FA29F0076ED6D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E340D155FA29F0076ED6D /* SenTestingKit.framework */; };
 		A39E340F155FA29F0076ED6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E33EC155FA29F0076ED6D /* UIKit.framework */; };
 		A39E3410155FA29F0076ED6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E33EE155FA29F0076ED6D /* Foundation.framework */; };
@@ -83,8 +90,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0907D662158721E2009C395E /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		0907D663158721E2009C395E /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		0907D66D15873BF9009C395E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0907D66F15873DF6009C395E /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		0907D67015873DF6009C395E /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		091E407615731F8900EE1F9E /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		091E407715731F8900EE1F9E /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Event.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		09359FE3158892AD00B4EA3E /* noise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noise.png; sourceTree = "<group>"; };
+		09359FE61588930300B4EA3E /* pin_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_map.png; sourceTree = "<group>"; };
+		09359FE71588930300B4EA3E /* pin_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin_map@2x.png"; sourceTree = "<group>"; };
+		09359FEA1588974400B4EA3E /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line@2x.png"; sourceTree = "<group>"; };
+		09359FEC1588977500B4EA3E /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		09A4458D1567A6CD00634C53 /* NSDate+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TKCategory.h"; sourceTree = "<group>"; };
 		09A4458E1567A6CD00634C53 /* NSDate+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSDate+TKCategory.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		09A4458F1567A6CD00634C53 /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapkuLibrary.bundle; sourceTree = "<group>"; };
@@ -119,7 +136,6 @@
 		A39E33FB155FA29F0076ED6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A39E33FC155FA29F0076ED6D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A39E33FF155FA29F0076ED6D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		A39E3402155FA29F0076ED6D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		A39E340C155FA29F0076ED6D /* HI CapacityTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HI CapacityTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39E340D155FA29F0076ED6D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		A39E3415155FA29F0076ED6D /* HI CapacityTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HI CapacityTests-Info.plist"; sourceTree = "<group>"; };
@@ -181,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0907D66E15873BF9009C395E /* MapKit.framework in Frameworks */,
 				09B27FF0157CBBDC0015FF1A /* QuartzCore.framework in Frameworks */,
 				A39E344D1564E2660076ED6D /* Security.framework in Frameworks */,
 				A39E344B1564E2610076ED6D /* SystemConfiguration.framework in Frameworks */,
@@ -209,6 +226,8 @@
 			children = (
 				091E407615731F8900EE1F9E /* Event.h */,
 				091E407715731F8900EE1F9E /* Event.m */,
+				0907D66F15873DF6009C395E /* Location.h */,
+				0907D67015873DF6009C395E /* Location.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -250,6 +269,7 @@
 		A39E33DD155FA29E0076ED6D = {
 			isa = PBXGroup;
 			children = (
+				0907D66D15873BF9009C395E /* MapKit.framework */,
 				C89BB1991584D29000A27EA1 /* Default.png */,
 				C89BB1971584D28D00A27EA1 /* Default@2x.png */,
 				C809EC5D157DED310040371E /* HICapIcon@2x.png */,
@@ -296,7 +316,6 @@
 				A39E33FB155FA29F0076ED6D /* AppDelegate.h */,
 				A39E33FC155FA29F0076ED6D /* AppDelegate.m */,
 				A39E33FE155FA29F0076ED6D /* MainStoryboard_iPhone.storyboard */,
-				A39E3401155FA29F0076ED6D /* MainStoryboard_iPad.storyboard */,
 				A39E33F3155FA29F0076ED6D /* Supporting Files */,
 				A39E344E1564E4830076ED6D /* HTTPEngine.h */,
 				A39E344F1564E4830076ED6D /* HTTPEngine.m */,
@@ -308,6 +327,8 @@
 				09A445B01568645D00634C53 /* CalendarViewController.m */,
 				09F56C67157B73B30028ACEB /* EventDetailsViewController.h */,
 				09F56C68157B73B30028ACEB /* EventDetailsViewController.m */,
+				0907D662158721E2009C395E /* AboutViewController.h */,
+				0907D663158721E2009C395E /* AboutViewController.m */,
 			);
 			path = "HI Capacity";
 			sourceTree = "<group>";
@@ -395,11 +416,16 @@
 				C89BB1A215852AA800A27EA1 /* escheresque.png */,
 				C89BB1A315852AA800A27EA1 /* launch.png */,
 				C89BB1A415852AA800A27EA1 /* launch@2x.png */,
+				09359FEC1588977500B4EA3E /* line.png */,
+				09359FEA1588974400B4EA3E /* line@2x.png */,
 				C89BB1A515852AA800A27EA1 /* logo.png */,
 				C89BB1A615852AA800A27EA1 /* logo@2x.png */,
 				C89BB1A715852AA800A27EA1 /* navbar.png */,
 				C89BB1A815852AA800A27EA1 /* navbar@2x.png */,
 				C89BB1A915852AA800A27EA1 /* noise.png */,
+				09359FE3158892AD00B4EA3E /* noise.png */,
+				09359FE61588930300B4EA3E /* pin_map.png */,
+				09359FE71588930300B4EA3E /* pin_map@2x.png */,
 				C89BB1AA15852AA800A27EA1 /* selected.png */,
 				C89BB1AB15852AA800A27EA1 /* selected@2x.png */,
 				C89BB1AC15852AA800A27EA1 /* tabbar.png */,
@@ -481,7 +507,6 @@
 			files = (
 				A39E33F7155FA29F0076ED6D /* InfoPlist.strings in Resources */,
 				A39E3400155FA29F0076ED6D /* MainStoryboard_iPhone.storyboard in Resources */,
-				A39E3403155FA29F0076ED6D /* MainStoryboard_iPad.storyboard in Resources */,
 				09A4459D1567A6CD00634C53 /* TapkuLibrary.bundle in Resources */,
 				09B27FF5157D55A00015FF1A /* SVProgressHUD.bundle in Resources */,
 				C809EC5C157DED270040371E /* HICapIcon.png in Resources */,
@@ -506,6 +531,11 @@
 				C89BB1BD15852AA800A27EA1 /* selected@2x.png in Resources */,
 				C89BB1BE15852AA800A27EA1 /* tabbar.png in Resources */,
 				C89BB1BF15852AA800A27EA1 /* tabbar@2x.png in Resources */,
+				09359FE4158892AD00B4EA3E /* noise.png in Resources */,
+				09359FE81588930300B4EA3E /* pin_map.png in Resources */,
+				09359FE91588930300B4EA3E /* pin_map@2x.png in Resources */,
+				09359FEB1588974400B4EA3E /* line@2x.png in Resources */,
+				09359FED1588977500B4EA3E /* line.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +594,8 @@
 				091E407815731F8900EE1F9E /* Event.m in Sources */,
 				09F56C69157B73B30028ACEB /* EventDetailsViewController.m in Sources */,
 				09B27FF6157D55A00015FF1A /* SVProgressHUD.m in Sources */,
+				0907D664158721E2009C395E /* AboutViewController.m in Sources */,
+				0907D67115873DF6009C395E /* Location.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,14 +634,6 @@
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
-		A39E3401155FA29F0076ED6D /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A39E3402155FA29F0076ED6D /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
-			sourceTree = "<group>";
-		};
 		A39E3416155FA29F0076ED6D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -643,7 +667,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -663,7 +687,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
