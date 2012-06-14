@@ -63,7 +63,8 @@
 - (void)enlargeMap
 {
   UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(shrinkMap)];          
-  [self.navigationItem setRightBarButtonItem: closeButton animated:YES];
+  if(self.navigationItem.rightBarButtonItem == nil)
+    [self.navigationItem setRightBarButtonItem: closeButton animated:YES];
   [UIView beginAnimations:nil context:NULL];
   [UIView setAnimationDuration:0.85];
   [self.mapView setFrame:(CGRectMake(mapView.frame.origin.x, mapView.frame.origin.y, mapView.frame.size.width, 370))];
