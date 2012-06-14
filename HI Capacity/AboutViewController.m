@@ -54,6 +54,43 @@
   
   Location *loc = [[Location alloc] initWithCoordinate:zoomLocation];
   [mapView addAnnotation:loc];
+  
+  UITapGestureRecognizer* tapRec = [[UITapGestureRecognizer alloc] 
+                                    initWithTarget:self action:@selector(enlargeMap)];
+  [mapView addGestureRecognizer:tapRec];
+}
+
+- (void)enlargeMap
+{
+
+  UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(shrinkMap)];          
+  self.navigationItem.rightBarButtonItem = closeButton;
+  
+  [UIView beginAnimations:nil context:NULL];
+  [UIView setAnimationDuration:0.85];
+  [self.mapView setFrame:(CGRectMake(mapView.frame.origin.x, mapView.frame.origin.y, mapView.frame.size.width, 370))];
+  CLLocationCoordinate2D zoomLocation;
+  zoomLocation.latitude = 21.29692165932583;
+  zoomLocation.longitude= -157.85649240016937;
+  MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 500, 500);
+  MKCoordinateRegion adjustedRegion = [mapView regionThatFits:viewRegion];                
+  [mapView setRegion:adjustedRegion];
+  [UIView commitAnimations];
+}
+
+- (void)shrinkMap
+{
+  [UIView beginAnimations:nil context:NULL];
+  [UIView setAnimationDuration:0.85];
+  [self.mapView setFrame:(CGRectMake(mapView.frame.origin.x, mapView.frame.origin.y, mapView.frame.size.width, 101))];
+  CLLocationCoordinate2D zoomLocation;
+  zoomLocation.latitude = 21.29692165932583;
+  zoomLocation.longitude= -157.85649240016937;
+  MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 200, 200);
+  MKCoordinateRegion adjustedRegion = [mapView regionThatFits:viewRegion];                
+  [mapView setRegion:adjustedRegion];
+  self.navigationItem.rightBarButtonItem = nil;
+  [UIView commitAnimations];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

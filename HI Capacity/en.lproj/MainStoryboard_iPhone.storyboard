@@ -35,10 +35,6 @@
                                 <rect key="frame" x="0.0" y="-5" width="320" height="372"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="2fw-O5-MdH">
-                                        <rect key="frame" x="0.0" y="5" width="320" height="101"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    </mapView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="Peo-Os-jG4">
                                         <rect key="frame" x="0.0" y="146" width="320" height="244"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,6 +76,10 @@
                                         <rect key="frame" x="0.0" y="147" width="320" height="9"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="2fw-O5-MdH">
+                                        <rect key="frame" x="0.0" y="5" width="320" height="101"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </mapView>
                                 </subviews>
                             </scrollView>
                         </subviews>

@@ -10,7 +10,7 @@
   UIImageView *splash = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"launch"]];
   [self.window.rootViewController.view addSubview:splash];
   
-  [UIView animateWithDuration:0.75 
+  [UIView animateWithDuration:0.85 
                    animations:^{
                      splash.alpha = 0;
                    }
