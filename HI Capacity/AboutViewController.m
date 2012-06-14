@@ -62,10 +62,8 @@
 
 - (void)enlargeMap
 {
-
   UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(shrinkMap)];          
-  self.navigationItem.rightBarButtonItem = closeButton;
-  
+  [self.navigationItem setRightBarButtonItem: closeButton animated:YES];
   [UIView beginAnimations:nil context:NULL];
   [UIView setAnimationDuration:0.85];
   [self.mapView setFrame:(CGRectMake(mapView.frame.origin.x, mapView.frame.origin.y, mapView.frame.size.width, 370))];
@@ -89,13 +87,19 @@
   MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 200, 200);
   MKCoordinateRegion adjustedRegion = [mapView regionThatFits:viewRegion];                
   [mapView setRegion:adjustedRegion];
-  self.navigationItem.rightBarButtonItem = nil;
   [UIView commitAnimations];
+  [self.navigationItem setRightBarButtonItem: nil animated:YES];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+  [self shrinkMap];
+  [super viewDidDisappear:NO];
 }
 
 - (IBAction)mapButtonClicked:(id)sender {
