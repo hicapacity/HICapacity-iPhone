@@ -10,6 +10,7 @@
 #import "HTTPEngine.h"
 #import "PostContentViewController.h"
 #import "SVProgressHUD.h"
+#import "Post.h"
 
 @interface PostsViewController ()
 - (void) showLoading;
@@ -91,8 +92,8 @@
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   
   // Configure the cell...
-  NSDictionary *post = [posts objectAtIndex:[indexPath row]];
-  [[cell textLabel] setText:[post objectForKey:@"title"]];
+  Post *post = [posts objectAtIndex:[indexPath row]];
+  [[cell textLabel] setText:[post title]];
   
   return cell;
 }

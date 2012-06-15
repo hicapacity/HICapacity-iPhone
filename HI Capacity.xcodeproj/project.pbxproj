@@ -16,6 +16,7 @@
 		09359FE91588930300B4EA3E /* pin_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09359FE71588930300B4EA3E /* pin_map@2x.png */; };
 		09359FEB1588974400B4EA3E /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09359FEA1588974400B4EA3E /* line@2x.png */; };
 		09359FED1588977500B4EA3E /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 09359FEC1588977500B4EA3E /* line.png */; };
+		09517A83158AF4320016EDF8 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 09517A82158AF4320016EDF8 /* Post.m */; };
 		09A4459C1567A6CD00634C53 /* NSDate+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A4458E1567A6CD00634C53 /* NSDate+TKCategory.m */; };
 		09A4459D1567A6CD00634C53 /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 09A4458F1567A6CD00634C53 /* TapkuLibrary.bundle */; };
 		09A4459E1567A6CD00634C53 /* TKCalendarMonthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A445911567A6CD00634C53 /* TKCalendarMonthTableViewController.m */; };
@@ -102,6 +103,8 @@
 		09359FE71588930300B4EA3E /* pin_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin_map@2x.png"; sourceTree = "<group>"; };
 		09359FEA1588974400B4EA3E /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line@2x.png"; sourceTree = "<group>"; };
 		09359FEC1588977500B4EA3E /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
+		09517A81158AF4320016EDF8 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		09517A82158AF4320016EDF8 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		09A4458D1567A6CD00634C53 /* NSDate+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TKCategory.h"; sourceTree = "<group>"; };
 		09A4458E1567A6CD00634C53 /* NSDate+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSDate+TKCategory.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		09A4458F1567A6CD00634C53 /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapkuLibrary.bundle; sourceTree = "<group>"; };
@@ -228,6 +231,8 @@
 				091E407715731F8900EE1F9E /* Event.m */,
 				0907D66F15873DF6009C395E /* Location.h */,
 				0907D67015873DF6009C395E /* Location.m */,
+				09517A81158AF4320016EDF8 /* Post.h */,
+				09517A82158AF4320016EDF8 /* Post.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -596,6 +601,7 @@
 				09B27FF6157D55A00015FF1A /* SVProgressHUD.m in Sources */,
 				0907D664158721E2009C395E /* AboutViewController.m in Sources */,
 				0907D67115873DF6009C395E /* Location.m in Sources */,
+				09517A83158AF4320016EDF8 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

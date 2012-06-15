@@ -42,7 +42,7 @@
 
   // Create the date/time text
   NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-  [formatter setDateFormat:@"EEEE, MMMM d yyyy h:mm z"];
+  [formatter setDateFormat:@"EEEE, MMMM d yyyy h:mm a z"];
   [formatter setTimeZone:[NSTimeZone systemTimeZone]];
   [[self eventTimeLabel] setText:[formatter stringFromDate:[event startTime]]];
 }

@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
 
 @interface PostContentViewController : UIViewController <UIWebViewDelegate, UIScrollViewDelegate>
 
-@property (strong, nonatomic) NSDictionary *post;
+@property (strong, nonatomic) Post *post;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (strong, nonatomic) IBOutlet UIWebView *contentLabel;

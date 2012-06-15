@@ -1,5 +1,7 @@
 #import "HTTPEngine.h"
 #import "Event.h"
+#import "Post.h"
+
 @implementation HTTPEngine
 
 -(MKNetworkOperation*) posts:
@@ -10,7 +12,13 @@
                                         httpMethod:@"GET"];
   [op onCompletion:^(MKNetworkOperation *completedOperation) {
     NSDictionary *responseDictionary = [completedOperation responseJSON];
-    NSMutableArray *posts = [responseDictionary objectForKey:@"posts"];
+    NSMutableArray *jsonPosts = [responseDictionary objectForKey:@"posts"];
+    
+    NSMutableArray *posts = [[NSMutableArray alloc] initWithCapacity:[jsonPosts count]];
+    [jsonPosts enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
+      Post *p = [[Post alloc] initWithDictionary:[jsonPosts objectAtIndex:index]];
+      [posts addObject:p];
+    }];
     
 //    if([completedOperation isCachedResponse]) {
 //      NSLog(@"Data from cache %@", responseDictionary);
@@ -55,12 +63,12 @@
       [events addObject:e];
     }];
     
-    if([completedOperation isCachedResponse]) {
+//    if([completedOperation isCachedResponse]) {
 //      NSLog(@"Data from cache %@", responseDictionary);
-    }
-    else {
+//    }
+//    else {
 //      NSLog(@"Data from server %@", responseDictionary);
-    }
+//    }
     completionBlock(events);
   }
            onError:^(NSError* error) {

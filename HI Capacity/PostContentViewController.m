@@ -39,7 +39,7 @@
     self.navigationItem.titleView = imageView;
   
     // Set the post title label
-    [titleLabel setText:[post objectForKey:@"title"]];
+    [titleLabel setText:[post title]];
     [titleLabel setNumberOfLines:0];
     [titleLabel sizeToFit]; // Shrink the frame to fit the text
     
@@ -49,11 +49,11 @@
     
     // Set the date label
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init]; 
-    [dateFormat setDateFormat:@"EEE, d MMM yyyy HH:mm:ss ZZZ"];
-    [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
-    NSDate *newDate = [dateFormat dateFromString:[post objectForKey:@"date"]];  
-    [dateFormat setDateFormat:@"EEEE, d MMM yyyy h:mm"];
-    [dateLabel setText:[NSString stringWithFormat:@"(%@)", [dateFormat stringFromDate:newDate]]];
+//    [dateFormat setDateFormat:@"EEE, d MMM yyyy HH:mm:ss ZZZ"];
+//    [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
+//    NSDate *newDate = [dateFormat dateFromString:[post objectForKey:@"date"]];  
+    [dateFormat setDateFormat:@"EEEE, MMM d yyyy"];
+    [dateLabel setText:[NSString stringWithFormat:@"%@", [dateFormat stringFromDate:[post date]]]];
     
     // Adjust position of the date label
     CGRect frame = dateLabel.frame;
@@ -67,7 +67,7 @@
     [contentLabel setBackgroundColor:[UIColor clearColor]];
   
   // Wrap the post content is html tags with CSS font information
-  NSString* postContent = [post objectForKey:@"content"];
+  NSString* postContent = [post content];
   NSString* htmlContentString = [NSString stringWithFormat:
                                  @"<html>"
                                  "<style type=\"text/css\">"
