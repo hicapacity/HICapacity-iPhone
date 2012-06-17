@@ -31,41 +31,38 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+  [super viewDidLoad];
 
-    // Load HI Capacity logo
-    UIImage *image = [UIImage imageNamed: @"logo"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage: image];
-    self.navigationItem.titleView = imageView;
+  // Load HI Capacity logo
+  UIImage *image = [UIImage imageNamed: @"logo"];
+  UIImageView *imageView = [[UIImageView alloc] initWithImage: image];
+  self.navigationItem.titleView = imageView;
+
+  // Set the post title label
+  [titleLabel setText:[post title]];
+  [titleLabel setNumberOfLines:0];
+  [titleLabel sizeToFit]; // Shrink the frame to fit the text
   
-    // Set the post title label
-    [titleLabel setText:[post title]];
-    [titleLabel setNumberOfLines:0];
-    [titleLabel sizeToFit]; // Shrink the frame to fit the text
-    
-    // Set spacing and get position of where to place next label
-    int labelSpacing = 10;
-    int newY = titleLabel.frame.size.height + titleLabel.frame.origin.y + labelSpacing;
-    
-    // Set the date label
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init]; 
-//    [dateFormat setDateFormat:@"EEE, d MMM yyyy HH:mm:ss ZZZ"];
-//    [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
-//    NSDate *newDate = [dateFormat dateFromString:[post objectForKey:@"date"]];  
-    [dateFormat setDateFormat:@"EEEE, MMM d yyyy"];
-    [dateLabel setText:[NSString stringWithFormat:@"%@", [dateFormat stringFromDate:[post date]]]];
-    
-    // Adjust position of the date label
-    CGRect frame = dateLabel.frame;
-    frame.origin.y = newY;
-    dateLabel.frame = frame;
-    [dateLabel setNumberOfLines:0];
-    [dateLabel sizeToFit];
-    
-    // Set settings on the UIWebView
-    [contentLabel setOpaque:FALSE];
-    [contentLabel setBackgroundColor:[UIColor clearColor]];
+  // Set spacing and get position of where to place next label
+  int labelSpacing = 10;
+  int newY = titleLabel.frame.size.height + titleLabel.frame.origin.y + labelSpacing;
   
+  // Set the date label
+  NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init]; 
+  [dateFormat setDateFormat:@"EEEE, MMM d yyyy"];
+  [dateLabel setText:[dateFormat stringFromDate:[post date]]];
+  
+  // Adjust position of the date label
+  CGRect frame = dateLabel.frame;
+  frame.origin.y = newY;
+  dateLabel.frame = frame;
+  [dateLabel setNumberOfLines:0];
+  [dateLabel sizeToFit];
+  
+  // Set settings on the UIWebView
+  [contentLabel setOpaque:FALSE];
+  [contentLabel setBackgroundColor:[UIColor clearColor]];
+
   // Wrap the post content is html tags with CSS font information
   NSString* postContent = [post content];
   NSString* htmlContentString = [NSString stringWithFormat:
@@ -77,22 +74,22 @@
                                  "<p>%@</p>"
                                  "</body></html>", postContent];
   
-    // Set the content of the UIWebView and set it's y position
-    [contentLabel loadHTMLString:htmlContentString baseURL:nil];
-    newY = dateLabel.frame.size.height + dateLabel.frame.origin.y + labelSpacing;
-    frame = contentLabel.frame;
-    frame.origin.y = newY; 
-    contentLabel.frame = frame;
-    
-    //Disable bounce scroll on UIWebView
-    for(UIView *tmpView in ((UIWebView *)contentLabel).subviews){
-        if([tmpView isKindOfClass:[UIScrollView class] ]){
-            ((UIScrollView*)tmpView).scrollEnabled = NO;
-            ((UIScrollView*)tmpView).bounces = NO;
-            break;
-        }
-    }
+  // Set the content of the UIWebView and set it's y position
+  [contentLabel loadHTMLString:htmlContentString baseURL:nil];
+  newY = dateLabel.frame.size.height + dateLabel.frame.origin.y + labelSpacing;
+  frame = contentLabel.frame;
+  frame.origin.y = newY; 
+  contentLabel.frame = frame;
   
+  //Disable bounce scroll on UIWebView
+  for(UIView *tmpView in ((UIWebView *)contentLabel).subviews){
+      if([tmpView isKindOfClass:[UIScrollView class] ]){
+          ((UIScrollView*)tmpView).scrollEnabled = NO;
+          ((UIScrollView*)tmpView).bounces = NO;
+          break;
+      }
+  }
+
   // Hack to use scalePageToFit but also disable the pinch/zoom of the UIWebView
   UIScrollView *webViewScrollView = [contentLabel.subviews objectAtIndex:0];
   webViewScrollView.delegate = self;//self must be UIScrollViewDelegate

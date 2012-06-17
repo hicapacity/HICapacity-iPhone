@@ -95,6 +95,9 @@
   Post *post = [posts objectAtIndex:[indexPath row]];
   [[cell textLabel] setText:[post title]];
   
+  NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init]; 
+  [dateFormat setDateFormat:@"MMM d yyyy"];
+  [[cell detailTextLabel] setText:[dateFormat stringFromDate:[post date]]];
   return cell;
 }
 

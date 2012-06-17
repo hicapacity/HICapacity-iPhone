@@ -37,14 +37,38 @@
   self.navigationItem.titleView = imageView;
   self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noise"]];
   
+  // Remove padding from UITextView
+  eventDescText.contentInset = UIEdgeInsetsMake(-11,-8,0,0);
+  
+  // Set and resize title label
   [[self eventSummaryLabel] setText:[event summary]];
-  [[self eventDescText] setText:[event description]];
+  [eventSummaryLabel setNumberOfLines:0];
+  [eventSummaryLabel sizeToFit]; // Shrink the frame to fit the text
+  
+  // Set spacing and get position of where to place next label
+  int labelSpacing = 10;
+  int newY = eventSummaryLabel.frame.size.height + eventSummaryLabel.frame.origin.y + labelSpacing;
 
   // Create the date/time text
   NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
   [formatter setDateFormat:@"EEEE, MMMM d yyyy h:mm a z"];
   [formatter setTimeZone:[NSTimeZone systemTimeZone]];
   [[self eventTimeLabel] setText:[formatter stringFromDate:[event startTime]]];
+  
+  // Adjust position of the date label
+  CGRect frame = eventTimeLabel.frame;
+  frame.origin.y = newY;
+  eventTimeLabel.frame = frame;
+  [eventTimeLabel setNumberOfLines:0];
+  
+  // Set Description text
+  [[self eventDescText] setText:[event description]];
+  
+  // Adjust position of event description textview]
+  newY = eventTimeLabel.frame.size.height + eventTimeLabel.frame.origin.y + labelSpacing;
+  frame = eventDescText.frame;
+  frame.origin.y = newY; 
+  eventDescText.frame = frame;
 }
 
 - (void)viewDidUnload
