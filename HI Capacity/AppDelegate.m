@@ -26,7 +26,7 @@
                                      forBarMetrics:UIBarMetricsDefault];
   
   [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
-  // [[UITabBar appearance] setSelectedImageTintColor:[UIColor redColor]]; 
+  [[UITabBar appearance] setSelectedImageTintColor:[UIColor lightGrayColor]]; 
   [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabbar"]];
   UIImage *tabIndicatorImage = [[UIImage imageNamed:@"selected"] 
                                 resizableImageWithCapInsets:UIEdgeInsetsMake(0, 8, 0, 8)];
