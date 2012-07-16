@@ -33,7 +33,7 @@
   [[UITabBar appearance] setSelectionIndicatorImage:tabIndicatorImage];
   [[UIScrollView appearance] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"noise"]]];
   [[UITableView appearance] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"noise"]]];
-  
+
   [[UIApplication sharedApplication] 
    setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:NO];
   return YES;
