@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E2620" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="QZU-Qr-WJA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="QZU-Qr-WJA">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
@@ -35,15 +35,17 @@
                                 <rect key="frame" x="0.0" y="-5" width="320" height="372"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="Peo-Os-jG4">
-                                        <rect key="frame" x="0.0" y="146" width="320" height="244"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" id="Peo-Os-jG4">
+                                        <rect key="frame" x="0.0" y="146" width="320" height="368"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <string key="text">HI Capacity started in January of 2011 when a handful of people had a desire to make Honolulu's first makerspace a reality. HI Capacity met at coffee shops on Saturdays and held public events. As more members joined there was a need for a permanent home. In October of 2011 the dream of having a dedicated space became one step closer. The Box Jelly graciously allowed HI Capacity to share their space and finally have a location. In July of 2012 HI Capacity will re-open again in their own space. Exciting times are ahead.</string>
+                                        <mutableString key="text">HI Capacity started in January of 2011 when a handful of people had a desire to make Honolulu's first makerspace a reality. HI Capacity met at coffee shops on Saturdays and held public events. As more members joined there was a need for a permanent home. In October of 2011 the dream of having a dedicated space became one step closer. The Box Jelly graciously allowed HI Capacity to share their space and finally have a location.
+
+With HI Capacity continuing to grow, the shared space was quickly outgrown. Partnering with The Box Jelly once again HI Capacity re-opened its doors in mid-2012 in its own dedicated space adjoining The Box Jelly. With this exciting development HI Capacity will continue to grow. Even though people will come and go, the original goals from the founders will not change. Check back to see where HI Capacity ends up!</mutableString>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="307c Kamani Street" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="qLH-LN-7lP">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="307a Kamani Street" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="qLH-LN-7lP">
                                         <rect key="frame" x="7" y="106" width="157" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
@@ -73,7 +75,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="top" image="line.png" id="8gS-Ys-u5Y">
-                                        <rect key="frame" x="0.0" y="147" width="320" height="9"/>
+                                        <rect key="frame" x="0.0" y="144" width="320" height="9"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="2fw-O5-MdH">
@@ -88,6 +90,7 @@
                     <navigationItem key="navigationItem" id="iAg-39-Eh2"/>
                     <connections>
                         <outlet property="mapView" destination="2fw-O5-MdH" id="Si0-VU-Zog"/>
+                        <outlet property="scrollView" destination="fjU-YR-FPC" id="Euq-rp-OdB"/>
                     </connections>
                 </viewController>
             </objects>
@@ -314,7 +317,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar.png" width="32" height="32"/>
+        <image name="calendar.png" width="27" height="27"/>
         <image name="info.png" width="27" height="27"/>
         <image name="line.png" width="320" height="2"/>
         <image name="pin_map.png" width="24" height="24"/>
@@ -326,6 +329,7 @@
             <relationships>
                 <relationship kind="action" name="mapButtonClicked:"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
         <class className="CalendarViewController" superclassName="TKCalendarMonthTableViewController">

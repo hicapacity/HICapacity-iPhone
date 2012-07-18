@@ -16,6 +16,7 @@
 
 @implementation AboutViewController
 @synthesize mapView;
+@synthesize scrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,11 +35,14 @@
   UIImage *image = [UIImage imageNamed: @"logo"];
   UIImageView *imageView = [[UIImageView alloc] initWithImage: image];
   self.navigationItem.titleView = imageView;
+  
+  [[self scrollView] setContentSize:CGSizeMake(320, 515)];
 }
 
 - (void)viewDidUnload
 {
   [self setMapView:nil];
+  [self setScrollView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

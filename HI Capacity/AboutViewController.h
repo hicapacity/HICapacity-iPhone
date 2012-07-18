@@ -11,6 +11,7 @@
 
 @interface AboutViewController : UIViewController
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 - (IBAction)mapButtonClicked:(id)sender;
 
 @end
