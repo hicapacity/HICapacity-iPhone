@@ -38,7 +38,7 @@
   self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noise"]];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
   // Deselect any selected table row there may be
   [[super tableView] deselectRowAtIndexPath:[[super tableView] indexPathForSelectedRow] animated:animated];
   [super viewWillAppear:animated];
@@ -49,10 +49,15 @@
   }
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated {
   [super viewDidDisappear:animated];
   // Hide the loading box?
   [self dismissLoading:NO];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+  return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 
 - (NSArray*) calendarMonthView:(TKCalendarMonthView*)monthView marksFromDate:(NSDate*)startDate toDate:(NSDate*)lastDate {

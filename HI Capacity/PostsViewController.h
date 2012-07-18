@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PostsViewController : UITableViewController<UITableViewDelegate>
+@interface PostsViewController : UITableViewController<UITableViewDelegate> {
+  MKNetworkOperation *runningOp;
+}
 
 @property (strong, nonatomic) NSMutableArray *posts;
 @property (weak, nonatomic) IBOutlet UITableView *postTableView;
