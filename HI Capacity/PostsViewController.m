@@ -40,25 +40,10 @@
   UIImageView *imageView = [[UIImageView alloc] initWithImage: image];
   self.navigationItem.titleView = imageView;
   
-  // Start loading spinner
-  [self showLoading];
+  refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
+  [refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
   
-  NSMutableDictionary *headerFields = [NSMutableDictionary dictionary];
-  [headerFields setValue:@"iOS" forKey:@"x-client-identifier"];
-  [headerFields setValue:@"application/json" forKey:@"Accept"];
-  HTTPEngine *httpEngine = [[HTTPEngine alloc] initWithHostName:@"hicapacity.org" customHeaderFields:headerFields];
-  runningOp = [httpEngine posts:nil :^(NSMutableArray *returnedPosts) {
-    posts = returnedPosts;
-    [postTableView reloadData];
-    [self dismissLoading:NO]; // Stop loading spinner
-    runningOp = nil;
-  }
-            onError:^(NSError *error) {
-              // please handle the error
-              [self dismissLoading:YES]; // Stop loading spinner
-              runningOp = nil;
-            }];
-  
+  [self reloadPosts];
 }
 
 - (void)viewDidUnload
@@ -87,6 +72,42 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
   return UIInterfaceOrientationIsPortrait(interfaceOrientation);
+}
+
+- (void)dropViewDidBeginRefreshing:(ODRefreshControl *)refreshControl
+{
+  double delayInSeconds = 0.0;
+  dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+  dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    [self reloadPosts];
+  });
+}
+
+- (void)reloadPosts {
+  // Start loading spinner
+  [self showLoading];
+  
+  NSMutableDictionary *headerFields = [NSMutableDictionary dictionary];
+  [headerFields setValue:@"iOS" forKey:@"x-client-identifier"];
+  [headerFields setValue:@"application/json" forKey:@"Accept"];
+  HTTPEngine *httpEngine = [[HTTPEngine alloc] initWithHostName:@"hicapacity.org" customHeaderFields:headerFields];
+  runningOp = [httpEngine posts:nil :^(NSMutableArray *returnedPosts) {
+    posts = returnedPosts;
+    [postTableView reloadData];
+    [self dismissLoading:NO]; // Stop loading spinner
+    if ([refreshControl refreshing]) {
+      [refreshControl endRefreshing]; // Stop the refreshing
+    }
+    runningOp = nil;
+  }
+                        onError:^(NSError *error) {
+                          // please handle the error
+                          [self dismissLoading:YES]; // Stop loading spinner
+                          if ([refreshControl refreshing]) {
+                            [refreshControl endRefreshing]; // Stop the refreshing
+                          }
+                          runningOp = nil;
+                        }];
 }
 
 #pragma mark - Table view data source
@@ -136,7 +157,7 @@
 
 - (void) showLoading {
   [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeNone];
-  [[[self view] subviews]makeObjectsPerformSelector:@selector(setUserInteractionEnabled:) withObject:[NSNumber numberWithBool:FALSE]];
+  [[self view] setUserInteractionEnabled:NO];
 }
 
 - (void) dismissLoading:(BOOL)error {
@@ -146,7 +167,7 @@
   else {
     [SVProgressHUD dismiss];
   }
-  [[[self view] subviews]makeObjectsPerformSelector:@selector(setUserInteractionEnabled:) withObject:[NSNumber numberWithBool:TRUE]];
+  [[self view] setUserInteractionEnabled:YES];
 }
 
 @end

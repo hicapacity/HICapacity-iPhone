@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ODRefreshControl.h"
 
 @interface PostsViewController : UITableViewController<UITableViewDelegate> {
   MKNetworkOperation *runningOp;
+  ODRefreshControl *refreshControl;
 }
 
 @property (strong, nonatomic) NSMutableArray *posts;

@@ -17,6 +17,7 @@
 		09359FEB1588974400B4EA3E /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09359FEA1588974400B4EA3E /* line@2x.png */; };
 		09359FED1588977500B4EA3E /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 09359FEC1588977500B4EA3E /* line.png */; };
 		09517A83158AF4320016EDF8 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 09517A82158AF4320016EDF8 /* Post.m */; };
+		098B1F6815B921CB00ACFAD1 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 098B1F6715B921CB00ACFAD1 /* ODRefreshControl.m */; };
 		09A4459C1567A6CD00634C53 /* NSDate+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A4458E1567A6CD00634C53 /* NSDate+TKCategory.m */; };
 		09A4459D1567A6CD00634C53 /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 09A4458F1567A6CD00634C53 /* TapkuLibrary.bundle */; };
 		09A4459E1567A6CD00634C53 /* TKCalendarMonthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A445911567A6CD00634C53 /* TKCalendarMonthTableViewController.m */; };
@@ -105,6 +106,8 @@
 		09359FEC1588977500B4EA3E /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		09517A81158AF4320016EDF8 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		09517A82158AF4320016EDF8 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		098B1F6615B921CB00ACFAD1 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
+		098B1F6715B921CB00ACFAD1 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		09A4458D1567A6CD00634C53 /* NSDate+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TKCategory.h"; sourceTree = "<group>"; };
 		09A4458E1567A6CD00634C53 /* NSDate+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSDate+TKCategory.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		09A4458F1567A6CD00634C53 /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapkuLibrary.bundle; sourceTree = "<group>"; };
@@ -237,6 +240,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		098B1F6515B921CB00ACFAD1 /* ODRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				098B1F6615B921CB00ACFAD1 /* ODRefreshControl.h */,
+				098B1F6715B921CB00ACFAD1 /* ODRefreshControl.m */,
+			);
+			name = ODRefreshControl;
+			path = vendor/ODRefreshControl;
+			sourceTree = "<group>";
+		};
 		09A4458C1567A6CD00634C53 /* TapkuLibrary */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +296,7 @@
 				09B27FF1157D55A00015FF1A /* SVProgressHUD */,
 				09A4458C1567A6CD00634C53 /* TapkuLibrary */,
 				A39E34281564E0D40076ED6D /* MKNetworkKit */,
+				098B1F6515B921CB00ACFAD1 /* ODRefreshControl */,
 				A39E33F2155FA29F0076ED6D /* HI Capacity */,
 				A39E3413155FA29F0076ED6D /* HI CapacityTests */,
 				A39E33EB155FA29F0076ED6D /* Frameworks */,
@@ -602,6 +616,7 @@
 				0907D664158721E2009C395E /* AboutViewController.m in Sources */,
 				0907D67115873DF6009C395E /* Location.m in Sources */,
 				09517A83158AF4320016EDF8 /* Post.m in Sources */,
+				098B1F6815B921CB00ACFAD1 /* ODRefreshControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
