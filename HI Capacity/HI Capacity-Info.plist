@@ -16,9 +16,8 @@
 			<array>
 				<string>HICapIcon.png</string>
 				<string>HICapIcon@2x.png</string>
-				<string>Default@2x.png</string>
 				<string>Default.png</string>
-				<string>iTunesArtwork</string>
+				<string>Default@2x.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>

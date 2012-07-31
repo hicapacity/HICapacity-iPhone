@@ -54,7 +54,7 @@
 		A39E344B1564E2610076ED6D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E344A1564E2610076ED6D /* SystemConfiguration.framework */; };
 		A39E344D1564E2660076ED6D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39E344C1564E2660076ED6D /* Security.framework */; };
 		A39E34501564E4830076ED6D /* HTTPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = A39E344F1564E4830076ED6D /* HTTPEngine.m */; };
-		A3C3924315BA2BB1007C529C /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = A3C3924215BA2BB1007C529C /* iTunesArtwork */; };
+		A3EF4AD615C89A4500ADAB58 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EF4AD515C89A4500ADAB58 /* iTunesArtwork.png */; };
 		C809EC5C157DED270040371E /* HICapIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C809EC5B157DED270040371E /* HICapIcon.png */; };
 		C809EC5E157DED310040371E /* HICapIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C809EC5D157DED310040371E /* HICapIcon@2x.png */; };
 		C8407A6D15662EFA001CAB68 /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8407A6C15662EFA001CAB68 /* PostsViewController.m */; };
@@ -170,7 +170,7 @@
 		A39E344C1564E2660076ED6D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A39E344E1564E4830076ED6D /* HTTPEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPEngine.h; sourceTree = "<group>"; };
 		A39E344F1564E4830076ED6D /* HTTPEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPEngine.m; sourceTree = "<group>"; };
-		A3C3924215BA2BB1007C529C /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		A3EF4AD515C89A4500ADAB58 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		C809EC5B157DED270040371E /* HICapIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HICapIcon.png; sourceTree = "<group>"; };
 		C809EC5D157DED310040371E /* HICapIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HICapIcon@2x.png"; sourceTree = "<group>"; };
 		C8407A6B15662EF9001CAB68 /* PostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsViewController.h; sourceTree = "<group>"; };
@@ -288,7 +288,7 @@
 		A39E33DD155FA29E0076ED6D = {
 			isa = PBXGroup;
 			children = (
-				A3C3924215BA2BB1007C529C /* iTunesArtwork */,
+				A3EF4AD515C89A4500ADAB58 /* iTunesArtwork.png */,
 				0907D66D15873BF9009C395E /* MapKit.framework */,
 				C89BB1991584D29000A27EA1 /* Default.png */,
 				C89BB1971584D28D00A27EA1 /* Default@2x.png */,
@@ -556,7 +556,7 @@
 				C88D0AFE15B49A560012C07B /* info@2x.png in Resources */,
 				C88D0B0115B49CA70012C07B /* posts.png in Resources */,
 				C88D0B0215B49CA70012C07B /* posts@2x.png in Resources */,
-				A3C3924315BA2BB1007C529C /* iTunesArtwork in Resources */,
+				A3EF4AD615C89A4500ADAB58 /* iTunesArtwork.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,7 +700,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -709,6 +709,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
